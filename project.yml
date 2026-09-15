@@ -1,0 +1,115 @@
+name: InferPeerSandbox
+
+options:
+  bundleIdPrefix: in.kodlabs
+  deploymentTarget:
+    iOS: "18.0"
+    macOS: "15.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    GCC_TREAT_WARNINGS_AS_ERRORS: true
+    SWIFT_TREAT_WARNINGS_AS_ERRORS: true
+    DEVELOPMENT_TEAM: R3645Z5958
+    CODE_SIGN_STYLE: Automatic
+
+packages:
+  InferPeer:
+    path: ../inferpeer-swift
+
+targets:
+  InferPeerSandbox-iOS:
+    type: application
+    platform: iOS
+    sources:
+      - Sources
+    info:
+      path: Support/iOS-Info.plist
+      properties:
+        CFBundleDisplayName: InferPeer Sandbox
+        NSBonjourServices:
+          - _inferpeer._tcp
+        NSLocalNetworkUsageDescription: InferPeer discovers explicitly approved devices on your local Wi-Fi network.
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        "UISupportedInterfaceOrientations~ipad":
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: in.kodlabs.inferpeer.sandbox
+        PRODUCT_NAME: InferPeerSandbox
+    dependencies:
+      - package: InferPeer
+        product: InferPeer
+      - package: InferPeer
+        product: InferPeerCore
+      - package: InferPeer
+        product: InferPeerInference
+      - package: InferPeer
+        product: InferPeerProtocol
+      - package: InferPeer
+        product: InferPeerSecurity
+      - package: InferPeer
+        product: InferPeerStorage
+      - package: InferPeer
+        product: InferPeerTelemetry
+      - package: InferPeer
+        product: InferPeerMLX
+
+  InferPeerSandbox-macOS:
+    type: application
+    platform: macOS
+    sources:
+      - Sources
+    info:
+      path: Support/macOS-Info.plist
+      properties:
+        CFBundleDisplayName: InferPeer Sandbox
+        NSBonjourServices:
+          - _inferpeer._tcp
+        NSLocalNetworkUsageDescription: InferPeer discovers explicitly approved devices on your local Wi-Fi network.
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: in.kodlabs.inferpeer.sandbox.mac
+        PRODUCT_NAME: InferPeerSandbox
+    dependencies:
+      - package: InferPeer
+        product: InferPeer
+      - package: InferPeer
+        product: InferPeerCore
+      - package: InferPeer
+        product: InferPeerInference
+      - package: InferPeer
+        product: InferPeerProtocol
+      - package: InferPeer
+        product: InferPeerSecurity
+      - package: InferPeer
+        product: InferPeerStorage
+      - package: InferPeer
+        product: InferPeerTelemetry
+      - package: InferPeer
+        product: InferPeerMLX
+
+schemes:
+  InferPeerSandbox-iOS:
+    build:
+      targets:
+        InferPeerSandbox-iOS: all
+    run:
+      config: Debug
+  InferPeerSandbox-macOS:
+    build:
+      targets:
+        InferPeerSandbox-macOS: all
+    run:
+      config: Debug
