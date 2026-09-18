@@ -1,5 +1,8 @@
 import Foundation
 import SwiftUI
+#if os(iOS)
+import UIKit
+#endif
 
 @MainActor
 final class SandboxViewModel: ObservableObject {
@@ -20,6 +23,22 @@ final class SandboxViewModel: ObservableObject {
             UIDevice.current.model + " · " + UIDevice.current.systemVersion
         #else
             "Mac · " + ProcessInfo.processInfo.operatingSystemVersionString
+        #endif
+    }
+
+    var platformLabel: String {
+        #if os(iOS)
+            UIDevice.current.userInterfaceIdiom == .pad ? "iPad" : "iPhone"
+        #else
+            "Mac"
+        #endif
+    }
+
+    var platformSystemImage: String {
+        #if os(iOS)
+            UIDevice.current.userInterfaceIdiom == .pad ? "ipad" : "iphone"
+        #else
+            "desktopcomputer"
         #endif
     }
 

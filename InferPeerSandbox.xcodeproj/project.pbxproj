@@ -34,6 +34,7 @@
 		7EC69A80B2827E7DF1036EB0 /* SandboxCallerStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87746A4E6965F19ECC75585 /* SandboxCallerStream.swift */; };
 		850DBE132740707DAFA2CE1A /* SandboxCallerScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE50F3E0E1D37001F469E9 /* SandboxCallerScenario.swift */; };
 		86481D5A24C66FA6147D22C1 /* SandboxEvidenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E093FEA2A163818E76C3CB47 /* SandboxEvidenceStore.swift */; };
+		879436CB4FEF4E43C17DB8A8 /* macOSAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1BFD58463E3ABD3055E71F /* macOSAssets.xcassets */; };
 		88B6DCBE351DC0872E810CC3 /* SandboxEvidenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E093FEA2A163818E76C3CB47 /* SandboxEvidenceStore.swift */; };
 		979358142CB5E5D81C3EB664 /* SandboxCoordinatorScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A94D9A0C0D6685FCCC60D9 /* SandboxCoordinatorScenario.swift */; };
 		99FC711A6B191107D7AC0930 /* SandboxWorkerScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39193CBF30159294FC9B232 /* SandboxWorkerScenario.swift */; };
@@ -48,15 +49,18 @@
 		C99B0B209C3EC58C69F711AE /* InferPeerStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 85A64799D23A7881CA8F07D1 /* InferPeerStorage */; };
 		CCF6DE298741CA4E42A57AD2 /* InferPeerSandboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B01C8FC3430FB038CD742 /* InferPeerSandboxApp.swift */; };
 		CD95966CA2572F490BDA9D49 /* InferPeerSecurity in Frameworks */ = {isa = PBXBuildFile; productRef = 648FFEC8C801BF0A686C19AC /* InferPeerSecurity */; };
+		CE8786D204405456FE8668F5 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42BC633E3074FFBAE5793F8A /* SharedAssets.xcassets */; };
 		D4A68617176D7B31CD68E920 /* SandboxClusterSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6316470826AC479DF0D1A /* SandboxClusterSupport.swift */; };
 		D5C424FF942A9B5BD08665EE /* SandboxSystemMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381663C5FDF3AED6FDC99B81 /* SandboxSystemMetrics.swift */; };
 		D5CFF11A28693969FA354D66 /* SandboxFailureMatrixRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EADA9C182E7EC236710F63 /* SandboxFailureMatrixRunner.swift */; };
+		D96DFF5154EE8F99854FFDDF /* iOSAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F342D83420E7463753068C06 /* iOSAssets.xcassets */; };
 		DC6E5508693F66825BB59D47 /* SandboxWorkerScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39193CBF30159294FC9B232 /* SandboxWorkerScenario.swift */; };
 		DCA324F7AAB99625CA3EE8EE /* SandboxCallerReplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF331BA75DC0A396F86E7295 /* SandboxCallerReplay.swift */; };
 		DD403321D6750641C5524108 /* InferPeerProtocol in Frameworks */ = {isa = PBXBuildFile; productRef = 38CED7A5318ECF457B3088F0 /* InferPeerProtocol */; };
 		E2180A4F001263BEAC8CF256 /* SandboxClusterRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961B24530B534174AFE48952 /* SandboxClusterRunner.swift */; };
 		E32C3B35CC20EBEA5603F41A /* SandboxClusterRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961B24530B534174AFE48952 /* SandboxClusterRunner.swift */; };
 		FD1D624EDFF3708BD311B522 /* SandboxValidationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474DB051183CA4E7F0992BC1 /* SandboxValidationRunner.swift */; };
+		FDDE0E67AEE74242A28672F0 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42BC633E3074FFBAE5793F8A /* SharedAssets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,7 @@
 		25C10C1204D925122D02EF5D /* SandboxMLXRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxMLXRunner.swift; sourceTree = "<group>"; };
 		381663C5FDF3AED6FDC99B81 /* SandboxSystemMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxSystemMetrics.swift; sourceTree = "<group>"; };
 		3BF398B88CFCF03DFA4117ED /* InferPeerSandbox-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InferPeerSandbox-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42BC633E3074FFBAE5793F8A /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
 		474DB051183CA4E7F0992BC1 /* SandboxValidationRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxValidationRunner.swift; sourceTree = "<group>"; };
 		961B24530B534174AFE48952 /* SandboxClusterRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxClusterRunner.swift; sourceTree = "<group>"; };
 		A42F86E8DB811220C0310300 /* SandboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxView.swift; sourceTree = "<group>"; };
@@ -73,10 +78,12 @@
 		B9685C8E4A193E0D35BC9E17 /* Qwen3-0.6B-4bit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Qwen3-0.6B-4bit"; path = "../Models/Qwen3-0.6B-4bit"; sourceTree = SOURCE_ROOT; };
 		C6DDCEA64792C7F91E59C7B9 /* InferPeerSandbox-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InferPeerSandbox-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87746A4E6965F19ECC75585 /* SandboxCallerStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxCallerStream.swift; sourceTree = "<group>"; };
+		DA1BFD58463E3ABD3055E71F /* macOSAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = macOSAssets.xcassets; sourceTree = "<group>"; };
 		E093FEA2A163818E76C3CB47 /* SandboxEvidenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxEvidenceStore.swift; sourceTree = "<group>"; };
 		E0E9A2900F66C0A60AA6ACAA /* SandboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxViewModel.swift; sourceTree = "<group>"; };
 		E57B01C8FC3430FB038CD742 /* InferPeerSandboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferPeerSandboxApp.swift; sourceTree = "<group>"; };
 		EEA6316470826AC479DF0D1A /* SandboxClusterSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxClusterSupport.swift; sourceTree = "<group>"; };
+		F342D83420E7463753068C06 /* iOSAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iOSAssets.xcassets; sourceTree = "<group>"; };
 		F4DE50F3E0E1D37001F469E9 /* SandboxCallerScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxCallerScenario.swift; sourceTree = "<group>"; };
 		F9EADA9C182E7EC236710F63 /* SandboxFailureMatrixRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxFailureMatrixRunner.swift; sourceTree = "<group>"; };
 		FF331BA75DC0A396F86E7295 /* SandboxCallerReplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxCallerReplay.swift; sourceTree = "<group>"; };
@@ -156,11 +163,22 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		C7D0303E38FC27E0F80526E8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F342D83420E7463753068C06 /* iOSAssets.xcassets */,
+				DA1BFD58463E3ABD3055E71F /* macOSAssets.xcassets */,
+				42BC633E3074FFBAE5793F8A /* SharedAssets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		DB83964BD262D81452A79653 = {
 			isa = PBXGroup;
 			children = (
 				B9685C8E4A193E0D35BC9E17 /* Qwen3-0.6B-4bit */,
 				21D014CD8BECD68DE900675B /* Packages */,
+				C7D0303E38FC27E0F80526E8 /* Resources */,
 				435D11589EC1027DC2BB704A /* Sources */,
 				224319349FD3CE3A38039648 /* Products */,
 			);
@@ -271,6 +289,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AAAF703F88CBCB8A7B98D94 /* Qwen3-0.6B-4bit in Resources */,
+				CE8786D204405456FE8668F5 /* SharedAssets.xcassets in Resources */,
+				D96DFF5154EE8F99854FFDDF /* iOSAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +299,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				40DD7C75C2C1161DEA20FD64 /* Qwen3-0.6B-4bit in Resources */,
+				FDDE0E67AEE74242A28672F0 /* SharedAssets.xcassets in Resources */,
+				879436CB4FEF4E43C17DB8A8 /* macOSAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +359,7 @@
 		0DEAEF7B7B3554DC76199E43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-iOS";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Support/iOS-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -354,7 +376,7 @@
 		1EFC5F9D2C6C67511384EEDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-macOS";
 				CODE_SIGN_ENTITLEMENTS = Support/macOS.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Support/macOS-Info.plist";
@@ -500,7 +522,7 @@
 		B55D5EC10EB14EB35C7F759C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-iOS";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Support/iOS-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -517,7 +539,7 @@
 		F02AB24098CB97C783C743E8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-macOS";
 				CODE_SIGN_ENTITLEMENTS = Support/macOS.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Support/macOS-Info.plist";

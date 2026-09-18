@@ -25,6 +25,8 @@ targets:
     platform: iOS
     sources:
       - Sources
+      - Resources/SharedAssets.xcassets
+      - Resources/iOSAssets.xcassets
       - path: ../Models/Qwen3-0.6B-4bit
         type: folder
         buildPhase: resources
@@ -51,6 +53,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: in.kodlabs.inferpeer.sandbox
         PRODUCT_NAME: InferPeerSandbox
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon-iOS
     dependencies:
       - package: InferPeer
         product: InferPeer
@@ -74,6 +77,8 @@ targets:
     platform: macOS
     sources:
       - Sources
+      - Resources/SharedAssets.xcassets
+      - Resources/macOSAssets.xcassets
       - path: ../Models/Qwen3-0.6B-4bit
         type: folder
         buildPhase: resources
@@ -94,6 +99,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: in.kodlabs.inferpeer.sandbox.mac
         PRODUCT_NAME: InferPeerSandbox
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon-macOS
     dependencies:
       - package: InferPeer
         product: InferPeer

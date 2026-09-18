@@ -9,6 +9,27 @@ struct SandboxView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section {
+                    HStack(alignment: .center, spacing: 16) {
+                        Image("InferPeerLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 104, height: 104)
+                            .accessibilityHidden(true)
+
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text("InferPeer Sandbox")
+                                .font(.headline)
+                            Label(model.platformLabel, systemImage: model.platformSystemImage)
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .padding(.vertical, 8)
+                } header: {
+                    Text("Platform identity")
+                }
+
                 Section("Device") {
                     LabeledContent("Platform", value: model.platformDescription)
                     LabeledContent("Lifecycle", value: model.lifecycleDescription)

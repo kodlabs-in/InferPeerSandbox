@@ -3,6 +3,10 @@
 This is a separate, non-shipping SwiftUI validation host for the sibling `inferpeer-swift`
 package. It is intentionally not an executable product in that package.
 
+The sandbox uses the InferPeer mark as its runtime branding and app icon. iPhone, iPad, and Mac
+icons carry distinct device-outline markers so screenshots and installed builds are easy to tell
+apart.
+
 Generate the Xcode project:
 
 ```sh
