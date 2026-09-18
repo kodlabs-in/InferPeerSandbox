@@ -16,6 +16,7 @@ struct SandboxCheck: Identifiable, Sendable {
 
 actor SandboxValidationRunner {
     private let statusProvider: SystemStatusProvider?
+    private let failureMatrix = SandboxFailureMatrixRunner()
 
     init() {
         statusProvider = try? SystemStatusProvider(participation: .available)
@@ -31,7 +32,10 @@ actor SandboxValidationRunner {
         checks.append(await storageCheck())
         checks.append(await statusCheck())
         checks.append(await inferenceCheck())
-        persist(checks)
+        let failureChecks = await failureMatrix.run()
+        checks.append(contentsOf: failureChecks)
+        try? SandboxEvidenceStore.writeChecks(checks)
+        try? SandboxEvidenceStore.writeFailures(failureChecks)
         return checks
     }
 
@@ -48,7 +52,7 @@ actor SandboxValidationRunner {
 
     private func storageCheck() async -> SandboxCheck {
         do {
-            let directory = try storageDirectory()
+            let directory = try SandboxEvidenceStore.directory()
             let store = try SQLiteOutboxStore(
                 databaseURL: directory.appendingPathComponent("smoke.sqlite"))
             let submission = try makeSubmission()
@@ -74,7 +78,7 @@ actor SandboxValidationRunner {
 
     private func inferenceCheck() async -> SandboxCheck {
         do {
-            let artifact = try makeArtifact(directoryURL: storageDirectory())
+            let artifact = try makeArtifact(directoryURL: SandboxEvidenceStore.directory())
             let request = try makeRequest(reference: artifact.descriptor.reference)
             let backend = SandboxInferenceBackend()
             await backend.loadModel(artifact)
@@ -91,26 +95,6 @@ actor SandboxValidationRunner {
         } catch {
             return failed("Bounded inference stream", error)
         }
-    }
-
-    private func storageDirectory() throws -> URL {
-        let manager = FileManager.default
-        guard let base = manager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
-        else {
-            throw CocoaError(.fileNoSuchFile)
-        }
-        var directory = base.appendingPathComponent("InferPeerSandbox", isDirectory: true)
-        try manager.createDirectory(at: directory, withIntermediateDirectories: true)
-        var values = URLResourceValues()
-        values.isExcludedFromBackup = true
-        try directory.setResourceValues(values)
-        #if os(iOS)
-            try manager.setAttributes(
-                [.protectionKey: FileProtectionType.completeUntilFirstUserAuthentication],
-                ofItemAtPath: directory.path
-            )
-        #endif
-        return directory
     }
 
     private func makeSubmission() throws -> RequestSubmission {
@@ -182,16 +166,6 @@ actor SandboxValidationRunner {
 
     private func failed(_ name: String, _ error: any Error) -> SandboxCheck {
         SandboxCheck(name: name, passed: false, detail: String(describing: error))
-    }
-
-    private func persist(_ checks: [SandboxCheck]) {
-        guard let directory = try? storageDirectory() else { return }
-        let lines = checks.map { "\($0.passed ? "PASS" : "FAIL")\t\($0.name)\t\($0.detail)" }
-        try? lines.joined(separator: "\n").write(
-            to: directory.appendingPathComponent("latest-validation.txt"),
-            atomically: true,
-            encoding: .utf8
-        )
     }
 }
 

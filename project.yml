@@ -25,6 +25,9 @@ targets:
     platform: iOS
     sources:
       - Sources
+      - path: ../Models/Qwen3-0.6B-4bit
+        type: folder
+        buildPhase: resources
     info:
       path: Support/iOS-Info.plist
       properties:
@@ -71,6 +74,9 @@ targets:
     platform: macOS
     sources:
       - Sources
+      - path: ../Models/Qwen3-0.6B-4bit
+        type: folder
+        buildPhase: resources
     info:
       path: Support/macOS-Info.plist
       properties:
@@ -78,6 +84,12 @@ targets:
         NSBonjourServices:
           - _inferpeer._tcp
         NSLocalNetworkUsageDescription: InferPeer discovers explicitly approved devices on your local Wi-Fi network.
+    entitlements:
+      path: Support/macOS.entitlements
+      properties:
+        com.apple.application-identifier: $(AppIdentifierPrefix)$(PRODUCT_BUNDLE_IDENTIFIER)
+        keychain-access-groups:
+          - $(AppIdentifierPrefix)$(PRODUCT_BUNDLE_IDENTIFIER)
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: in.kodlabs.inferpeer.sandbox.mac

@@ -1,0 +1,6 @@
+parent_config: ../inferpeer-swift/.swiftlint.yml
+
+included:
+  - Sources
+
+excluded: []

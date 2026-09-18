@@ -42,7 +42,7 @@ struct SandboxView: View {
                 Section("Real local MLX model") {
                     Text(model.modelStatus)
                         .font(.caption)
-                    Button("Choose local MLX model") {
+                    Button("Choose pinned model folder") {
                         isChoosingModel = true
                     }
                     .disabled(model.isRunningModel)
@@ -54,11 +54,17 @@ struct SandboxView: View {
                             .textSelection(.enabled)
                     }
                 }
+
+                Section("Physical-device cluster") {
+                    Text(model.clusterStatus)
+                        .font(.caption)
+                }
             }
             .navigationTitle("InferPeer Sandbox")
         }
         .task {
             model.runChecks()
+            model.runBundledModel()
         }
         .onChange(of: scenePhase) { _, phase in
             model.handle(phase)

@@ -13,17 +13,34 @@
 		078089A715B9A2B6B7152C7B /* InferPeerProtocol in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0C79CAA61EE238360F031A /* InferPeerProtocol */; };
 		079AFE09E3107744165D4428 /* InferPeerStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C02A8B93AD5ECFBF8EA5C506 /* InferPeerStorage */; };
 		0E9DB7835EB9F0B084B237C7 /* InferPeerSandboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B01C8FC3430FB038CD742 /* InferPeerSandboxApp.swift */; };
+		10FC9ECFA30B0A4D431F6673 /* SandboxCoordinatorScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A94D9A0C0D6685FCCC60D9 /* SandboxCoordinatorScenario.swift */; };
+		1AAAF703F88CBCB8A7B98D94 /* Qwen3-0.6B-4bit in Resources */ = {isa = PBXBuildFile; fileRef = B9685C8E4A193E0D35BC9E17 /* Qwen3-0.6B-4bit */; };
 		2865645BC7AEAACAD67D4876 /* SandboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E9A2900F66C0A60AA6ACAA /* SandboxViewModel.swift */; };
+		29DCC01DC8202847826A014A /* SandboxCallerScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE50F3E0E1D37001F469E9 /* SandboxCallerScenario.swift */; };
+		2A3AE2EE2B887C436373E1BC /* SandboxInterruptOnceBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B4E03810F1CD52B9377CC /* SandboxInterruptOnceBackend.swift */; };
 		2AA38E8926DD24E51E2C41C1 /* SandboxValidationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474DB051183CA4E7F0992BC1 /* SandboxValidationRunner.swift */; };
 		2F0EEAF60C91180BDFDD4DFB /* InferPeerSecurity in Frameworks */ = {isa = PBXBuildFile; productRef = 615DD5F82AD291EDE9DCF0C7 /* InferPeerSecurity */; };
 		30B5EC3F54E20701E88F7151 /* SandboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F86E8DB811220C0310300 /* SandboxView.swift */; };
+		33CE524A99B12B8CD11166DF /* SandboxClusterSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6316470826AC479DF0D1A /* SandboxClusterSupport.swift */; };
 		3EE453C8BC58E7DB7C63E006 /* InferPeerInference in Frameworks */ = {isa = PBXBuildFile; productRef = 7786A243503940DA6F1FDF22 /* InferPeerInference */; };
+		40DD7C75C2C1161DEA20FD64 /* Qwen3-0.6B-4bit in Resources */ = {isa = PBXBuildFile; fileRef = B9685C8E4A193E0D35BC9E17 /* Qwen3-0.6B-4bit */; };
 		44048C41F7890AF6A2991749 /* SandboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E9A2900F66C0A60AA6ACAA /* SandboxViewModel.swift */; };
 		4B7755345A73A8CC9F1753FA /* InferPeer in Frameworks */ = {isa = PBXBuildFile; productRef = 4134378BF1C771250773EC50 /* InferPeer */; };
+		4C4C0E87E03D98D369F7DE9C /* SandboxSystemMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381663C5FDF3AED6FDC99B81 /* SandboxSystemMetrics.swift */; };
 		4F7724F55375CBD6C23F0992 /* InferPeerCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8B6D8963C1DA02A07B84C74C /* InferPeerCore */; };
 		5219EF0C08292D93AE8002B9 /* InferPeerTelemetry in Frameworks */ = {isa = PBXBuildFile; productRef = 55DDC7604761593C1AD3D79B /* InferPeerTelemetry */; };
+		61894381196B8CD6841E813C /* SandboxInterruptOnceBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B4E03810F1CD52B9377CC /* SandboxInterruptOnceBackend.swift */; };
+		66771DE911BD6351A88FF760 /* SandboxFailureMatrixRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EADA9C182E7EC236710F63 /* SandboxFailureMatrixRunner.swift */; };
+		7EC69A80B2827E7DF1036EB0 /* SandboxCallerStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87746A4E6965F19ECC75585 /* SandboxCallerStream.swift */; };
+		850DBE132740707DAFA2CE1A /* SandboxCallerScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE50F3E0E1D37001F469E9 /* SandboxCallerScenario.swift */; };
+		86481D5A24C66FA6147D22C1 /* SandboxEvidenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E093FEA2A163818E76C3CB47 /* SandboxEvidenceStore.swift */; };
+		88B6DCBE351DC0872E810CC3 /* SandboxEvidenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E093FEA2A163818E76C3CB47 /* SandboxEvidenceStore.swift */; };
+		979358142CB5E5D81C3EB664 /* SandboxCoordinatorScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A94D9A0C0D6685FCCC60D9 /* SandboxCoordinatorScenario.swift */; };
+		99FC711A6B191107D7AC0930 /* SandboxWorkerScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39193CBF30159294FC9B232 /* SandboxWorkerScenario.swift */; };
+		9C18D73BEF11729D25CB6562 /* SandboxCallerReplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF331BA75DC0A396F86E7295 /* SandboxCallerReplay.swift */; };
 		9D2BC62C68F4AF2777BF5861 /* InferPeerTelemetry in Frameworks */ = {isa = PBXBuildFile; productRef = B51FA3849D252357100E8162 /* InferPeerTelemetry */; };
 		A8B0F674317EAF3748252994 /* SandboxMLXRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C10C1204D925122D02EF5D /* SandboxMLXRunner.swift */; };
+		ACA4F748867B45CD837F6E6D /* SandboxCallerStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87746A4E6965F19ECC75585 /* SandboxCallerStream.swift */; };
 		AFB2228B806EFA6512789F2C /* InferPeerInference in Frameworks */ = {isa = PBXBuildFile; productRef = 790E9E06E4DABB5509562E3F /* InferPeerInference */; };
 		B286B0F56F7C403DE6EBB260 /* InferPeerMLX in Frameworks */ = {isa = PBXBuildFile; productRef = 7D8B436C0E48FF923961A34E /* InferPeerMLX */; };
 		C570DB21E2C8B3D8DA1A13A9 /* InferPeerMLX in Frameworks */ = {isa = PBXBuildFile; productRef = EAAF50BC6CB08A5CE7090602 /* InferPeerMLX */; };
@@ -31,19 +48,38 @@
 		C99B0B209C3EC58C69F711AE /* InferPeerStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 85A64799D23A7881CA8F07D1 /* InferPeerStorage */; };
 		CCF6DE298741CA4E42A57AD2 /* InferPeerSandboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B01C8FC3430FB038CD742 /* InferPeerSandboxApp.swift */; };
 		CD95966CA2572F490BDA9D49 /* InferPeerSecurity in Frameworks */ = {isa = PBXBuildFile; productRef = 648FFEC8C801BF0A686C19AC /* InferPeerSecurity */; };
+		D4A68617176D7B31CD68E920 /* SandboxClusterSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6316470826AC479DF0D1A /* SandboxClusterSupport.swift */; };
+		D5C424FF942A9B5BD08665EE /* SandboxSystemMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381663C5FDF3AED6FDC99B81 /* SandboxSystemMetrics.swift */; };
+		D5CFF11A28693969FA354D66 /* SandboxFailureMatrixRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EADA9C182E7EC236710F63 /* SandboxFailureMatrixRunner.swift */; };
+		DC6E5508693F66825BB59D47 /* SandboxWorkerScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39193CBF30159294FC9B232 /* SandboxWorkerScenario.swift */; };
+		DCA324F7AAB99625CA3EE8EE /* SandboxCallerReplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF331BA75DC0A396F86E7295 /* SandboxCallerReplay.swift */; };
 		DD403321D6750641C5524108 /* InferPeerProtocol in Frameworks */ = {isa = PBXBuildFile; productRef = 38CED7A5318ECF457B3088F0 /* InferPeerProtocol */; };
+		E2180A4F001263BEAC8CF256 /* SandboxClusterRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961B24530B534174AFE48952 /* SandboxClusterRunner.swift */; };
+		E32C3B35CC20EBEA5603F41A /* SandboxClusterRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961B24530B534174AFE48952 /* SandboxClusterRunner.swift */; };
 		FD1D624EDFF3708BD311B522 /* SandboxValidationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474DB051183CA4E7F0992BC1 /* SandboxValidationRunner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24A94D9A0C0D6685FCCC60D9 /* SandboxCoordinatorScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxCoordinatorScenario.swift; sourceTree = "<group>"; };
 		25C10C1204D925122D02EF5D /* SandboxMLXRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxMLXRunner.swift; sourceTree = "<group>"; };
+		381663C5FDF3AED6FDC99B81 /* SandboxSystemMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxSystemMetrics.swift; sourceTree = "<group>"; };
 		3BF398B88CFCF03DFA4117ED /* InferPeerSandbox-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InferPeerSandbox-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		474DB051183CA4E7F0992BC1 /* SandboxValidationRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxValidationRunner.swift; sourceTree = "<group>"; };
+		961B24530B534174AFE48952 /* SandboxClusterRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxClusterRunner.swift; sourceTree = "<group>"; };
 		A42F86E8DB811220C0310300 /* SandboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxView.swift; sourceTree = "<group>"; };
 		A6230BF07DDA4A2E1234F25C /* inferpeer-swift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "inferpeer-swift"; path = "../inferpeer-swift"; sourceTree = SOURCE_ROOT; };
+		A78B4E03810F1CD52B9377CC /* SandboxInterruptOnceBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxInterruptOnceBackend.swift; sourceTree = "<group>"; };
+		B39193CBF30159294FC9B232 /* SandboxWorkerScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxWorkerScenario.swift; sourceTree = "<group>"; };
+		B9685C8E4A193E0D35BC9E17 /* Qwen3-0.6B-4bit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Qwen3-0.6B-4bit"; path = "../Models/Qwen3-0.6B-4bit"; sourceTree = SOURCE_ROOT; };
 		C6DDCEA64792C7F91E59C7B9 /* InferPeerSandbox-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InferPeerSandbox-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D87746A4E6965F19ECC75585 /* SandboxCallerStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxCallerStream.swift; sourceTree = "<group>"; };
+		E093FEA2A163818E76C3CB47 /* SandboxEvidenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxEvidenceStore.swift; sourceTree = "<group>"; };
 		E0E9A2900F66C0A60AA6ACAA /* SandboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxViewModel.swift; sourceTree = "<group>"; };
 		E57B01C8FC3430FB038CD742 /* InferPeerSandboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferPeerSandboxApp.swift; sourceTree = "<group>"; };
+		EEA6316470826AC479DF0D1A /* SandboxClusterSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxClusterSupport.swift; sourceTree = "<group>"; };
+		F4DE50F3E0E1D37001F469E9 /* SandboxCallerScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxCallerScenario.swift; sourceTree = "<group>"; };
+		F9EADA9C182E7EC236710F63 /* SandboxFailureMatrixRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxFailureMatrixRunner.swift; sourceTree = "<group>"; };
+		FF331BA75DC0A396F86E7295 /* SandboxCallerReplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxCallerReplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +137,21 @@
 			isa = PBXGroup;
 			children = (
 				E57B01C8FC3430FB038CD742 /* InferPeerSandboxApp.swift */,
+				FF331BA75DC0A396F86E7295 /* SandboxCallerReplay.swift */,
+				F4DE50F3E0E1D37001F469E9 /* SandboxCallerScenario.swift */,
+				D87746A4E6965F19ECC75585 /* SandboxCallerStream.swift */,
+				961B24530B534174AFE48952 /* SandboxClusterRunner.swift */,
+				EEA6316470826AC479DF0D1A /* SandboxClusterSupport.swift */,
+				24A94D9A0C0D6685FCCC60D9 /* SandboxCoordinatorScenario.swift */,
+				E093FEA2A163818E76C3CB47 /* SandboxEvidenceStore.swift */,
+				F9EADA9C182E7EC236710F63 /* SandboxFailureMatrixRunner.swift */,
+				A78B4E03810F1CD52B9377CC /* SandboxInterruptOnceBackend.swift */,
 				25C10C1204D925122D02EF5D /* SandboxMLXRunner.swift */,
+				381663C5FDF3AED6FDC99B81 /* SandboxSystemMetrics.swift */,
 				474DB051183CA4E7F0992BC1 /* SandboxValidationRunner.swift */,
 				A42F86E8DB811220C0310300 /* SandboxView.swift */,
 				E0E9A2900F66C0A60AA6ACAA /* SandboxViewModel.swift */,
+				B39193CBF30159294FC9B232 /* SandboxWorkerScenario.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -112,6 +159,7 @@
 		DB83964BD262D81452A79653 = {
 			isa = PBXGroup;
 			children = (
+				B9685C8E4A193E0D35BC9E17 /* Qwen3-0.6B-4bit */,
 				21D014CD8BECD68DE900675B /* Packages */,
 				435D11589EC1027DC2BB704A /* Sources */,
 				224319349FD3CE3A38039648 /* Products */,
@@ -126,6 +174,7 @@
 			buildConfigurationList = 9CC2A293C37EF2FFF29FBA67 /* Build configuration list for PBXNativeTarget "InferPeerSandbox-iOS" */;
 			buildPhases = (
 				3C6DE3C133F5F267CD8F074E /* Sources */,
+				A8605008DF6CF3C3B2EE91EE /* Resources */,
 				C5A3579833E13E716841F5A5 /* Frameworks */,
 			);
 			buildRules = (
@@ -152,6 +201,7 @@
 			buildConfigurationList = F2DD7576154D69E44455E567 /* Build configuration list for PBXNativeTarget "InferPeerSandbox-macOS" */;
 			buildPhases = (
 				A70A39BFE0CCA29B86E18775 /* Sources */,
+				F03FAC9EC206E05F7B4CFB3F /* Resources */,
 				4DC1BA6E0CC6D36B89BC664A /* Frameworks */,
 			);
 			buildRules = (
@@ -215,16 +265,46 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		A8605008DF6CF3C3B2EE91EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AAAF703F88CBCB8A7B98D94 /* Qwen3-0.6B-4bit in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F03FAC9EC206E05F7B4CFB3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40DD7C75C2C1161DEA20FD64 /* Qwen3-0.6B-4bit in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3C6DE3C133F5F267CD8F074E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CCF6DE298741CA4E42A57AD2 /* InferPeerSandboxApp.swift in Sources */,
+				DCA324F7AAB99625CA3EE8EE /* SandboxCallerReplay.swift in Sources */,
+				29DCC01DC8202847826A014A /* SandboxCallerScenario.swift in Sources */,
+				ACA4F748867B45CD837F6E6D /* SandboxCallerStream.swift in Sources */,
+				E2180A4F001263BEAC8CF256 /* SandboxClusterRunner.swift in Sources */,
+				33CE524A99B12B8CD11166DF /* SandboxClusterSupport.swift in Sources */,
+				10FC9ECFA30B0A4D431F6673 /* SandboxCoordinatorScenario.swift in Sources */,
+				86481D5A24C66FA6147D22C1 /* SandboxEvidenceStore.swift in Sources */,
+				66771DE911BD6351A88FF760 /* SandboxFailureMatrixRunner.swift in Sources */,
+				61894381196B8CD6841E813C /* SandboxInterruptOnceBackend.swift in Sources */,
 				A8B0F674317EAF3748252994 /* SandboxMLXRunner.swift in Sources */,
+				4C4C0E87E03D98D369F7DE9C /* SandboxSystemMetrics.swift in Sources */,
 				2AA38E8926DD24E51E2C41C1 /* SandboxValidationRunner.swift in Sources */,
 				30B5EC3F54E20701E88F7151 /* SandboxView.swift in Sources */,
 				44048C41F7890AF6A2991749 /* SandboxViewModel.swift in Sources */,
+				99FC711A6B191107D7AC0930 /* SandboxWorkerScenario.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,10 +313,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E9DB7835EB9F0B084B237C7 /* InferPeerSandboxApp.swift in Sources */,
+				9C18D73BEF11729D25CB6562 /* SandboxCallerReplay.swift in Sources */,
+				850DBE132740707DAFA2CE1A /* SandboxCallerScenario.swift in Sources */,
+				7EC69A80B2827E7DF1036EB0 /* SandboxCallerStream.swift in Sources */,
+				E32C3B35CC20EBEA5603F41A /* SandboxClusterRunner.swift in Sources */,
+				D4A68617176D7B31CD68E920 /* SandboxClusterSupport.swift in Sources */,
+				979358142CB5E5D81C3EB664 /* SandboxCoordinatorScenario.swift in Sources */,
+				88B6DCBE351DC0872E810CC3 /* SandboxEvidenceStore.swift in Sources */,
+				D5CFF11A28693969FA354D66 /* SandboxFailureMatrixRunner.swift in Sources */,
+				2A3AE2EE2B887C436373E1BC /* SandboxInterruptOnceBackend.swift in Sources */,
 				C72B9A80E170073DAB6F47BA /* SandboxMLXRunner.swift in Sources */,
+				D5C424FF942A9B5BD08665EE /* SandboxSystemMetrics.swift in Sources */,
 				FD1D624EDFF3708BD311B522 /* SandboxValidationRunner.swift in Sources */,
 				01335D2F91AE4D9E5E93BA44 /* SandboxView.swift in Sources */,
 				2865645BC7AEAACAD67D4876 /* SandboxViewModel.swift in Sources */,
+				DC6E5508693F66825BB59D47 /* SandboxWorkerScenario.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Support/macOS.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Support/macOS-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -426,6 +518,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Support/macOS.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Support/macOS-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
