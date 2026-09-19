@@ -7,119 +7,131 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01335D2F91AE4D9E5E93BA44 /* SandboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F86E8DB811220C0310300 /* SandboxView.swift */; };
-		03F0F345C5EE8A6A91FB74D9 /* InferPeerCore in Frameworks */ = {isa = PBXBuildFile; productRef = DDCBC0FFE7EA3F1B1DFC61B7 /* InferPeerCore */; };
-		0554B22F8F6F8D95E3A797EF /* InferPeer in Frameworks */ = {isa = PBXBuildFile; productRef = 11AA39AD89AEE65089BEF182 /* InferPeer */; };
-		078089A715B9A2B6B7152C7B /* InferPeerProtocol in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0C79CAA61EE238360F031A /* InferPeerProtocol */; };
-		079AFE09E3107744165D4428 /* InferPeerStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C02A8B93AD5ECFBF8EA5C506 /* InferPeerStorage */; };
-		0E9DB7835EB9F0B084B237C7 /* InferPeerSandboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B01C8FC3430FB038CD742 /* InferPeerSandboxApp.swift */; };
-		10FC9ECFA30B0A4D431F6673 /* SandboxCoordinatorScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A94D9A0C0D6685FCCC60D9 /* SandboxCoordinatorScenario.swift */; };
-		161798D01E8047F978D4ADE4 /* SandboxLocalAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C768C96066F1F13302F18 /* SandboxLocalAIService.swift */; };
-		2865645BC7AEAACAD67D4876 /* SandboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E9A2900F66C0A60AA6ACAA /* SandboxViewModel.swift */; };
-		29DCC01DC8202847826A014A /* SandboxCallerScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE50F3E0E1D37001F469E9 /* SandboxCallerScenario.swift */; };
-		2A3AE2EE2B887C436373E1BC /* SandboxInterruptOnceBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B4E03810F1CD52B9377CC /* SandboxInterruptOnceBackend.swift */; };
-		2AA38E8926DD24E51E2C41C1 /* SandboxValidationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474DB051183CA4E7F0992BC1 /* SandboxValidationRunner.swift */; };
-		2F0EEAF60C91180BDFDD4DFB /* InferPeerSecurity in Frameworks */ = {isa = PBXBuildFile; productRef = 615DD5F82AD291EDE9DCF0C7 /* InferPeerSecurity */; };
-		30B5EC3F54E20701E88F7151 /* SandboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F86E8DB811220C0310300 /* SandboxView.swift */; };
-		33CE524A99B12B8CD11166DF /* SandboxClusterSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6316470826AC479DF0D1A /* SandboxClusterSupport.swift */; };
-		3C1D0C6935B571CF953A3F8F /* SandboxAutomationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FA7BFB91DE6A070253744C /* SandboxAutomationRunner.swift */; };
-		3EE453C8BC58E7DB7C63E006 /* InferPeerInference in Frameworks */ = {isa = PBXBuildFile; productRef = 7786A243503940DA6F1FDF22 /* InferPeerInference */; };
-		44048C41F7890AF6A2991749 /* SandboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E9A2900F66C0A60AA6ACAA /* SandboxViewModel.swift */; };
+		03FF6120252798B0A8B84C81 /* InferPeerModelStore in Frameworks */ = {isa = PBXBuildFile; productRef = 2D9F953D6BC3946FBB9969E1 /* InferPeerModelStore */; };
+		078089A715B9A2B6B7152C7B /* InferPeerDiscovery in Frameworks */ = {isa = PBXBuildFile; productRef = FC9D42C20690FB75A8E8224B /* InferPeerDiscovery */; };
+		195CFF2C657134BF8D2157B6 /* InferPeerResourceHostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC938AD9D8B9E3AE3BC71F6D /* InferPeerResourceHostApp.swift */; };
+		1C865EDA76DC346A57839B28 /* InferPeerApple in Frameworks */ = {isa = PBXBuildFile; productRef = 5C4D339D0ECA35D73E125F04 /* InferPeerApple */; };
+		1F14CBB3BFD28F242DEDB64A /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42BC633E3074FFBAE5793F8A /* SharedAssets.xcassets */; };
+		21F8B5C7CDD58A2CFFB8A0A7 /* AppModelEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07A35C08B1DE24E640E464 /* AppModelEnvironment.swift */; };
+		25DF3791A4D18DC0D9AC76D8 /* InferPeerLlama in Frameworks */ = {isa = PBXBuildFile; productRef = 9640FC17C6E97B89EE1B4204 /* InferPeerLlama */; };
+		2E568E4BAE2D8A10481DE09D /* SandboxChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E58A902E72AF06CDF56CA7 /* SandboxChatView.swift */; };
+		3EE453C8BC58E7DB7C63E006 /* InferPeerCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8B6D8963C1DA02A07B84C74C /* InferPeerCore */; };
+		3F2524853E6600CAB904850A /* InferPeerLlama in Frameworks */ = {isa = PBXBuildFile; productRef = C9D0B02DFC4E88C6D8592002 /* InferPeerLlama */; };
+		3F776D6A7E71420AC6FF4991 /* InferPeerResourceHostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC938AD9D8B9E3AE3BC71F6D /* InferPeerResourceHostApp.swift */; };
 		4B7755345A73A8CC9F1753FA /* InferPeer in Frameworks */ = {isa = PBXBuildFile; productRef = 4134378BF1C771250773EC50 /* InferPeer */; };
-		4C4C0E87E03D98D369F7DE9C /* SandboxSystemMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381663C5FDF3AED6FDC99B81 /* SandboxSystemMetrics.swift */; };
-		4D4009421920E6F371EB31A7 /* InferPeerMLX in Frameworks */ = {isa = PBXBuildFile; productRef = EAAF50BC6CB08A5CE7090602 /* InferPeerMLX */; };
-		4F7724F55375CBD6C23F0992 /* InferPeerCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8B6D8963C1DA02A07B84C74C /* InferPeerCore */; };
-		5219EF0C08292D93AE8002B9 /* InferPeerTelemetry in Frameworks */ = {isa = PBXBuildFile; productRef = 55DDC7604761593C1AD3D79B /* InferPeerTelemetry */; };
-		61894381196B8CD6841E813C /* SandboxInterruptOnceBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B4E03810F1CD52B9377CC /* SandboxInterruptOnceBackend.swift */; };
-		66771DE911BD6351A88FF760 /* SandboxFailureMatrixRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EADA9C182E7EC236710F63 /* SandboxFailureMatrixRunner.swift */; };
-		726498EBEE1DF429AD4903D2 /* InferPeerApple in Frameworks */ = {isa = PBXBuildFile; productRef = 9CC1C24521B1B4A913CEE9C8 /* InferPeerApple */; };
-		7EC69A80B2827E7DF1036EB0 /* SandboxCallerStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87746A4E6965F19ECC75585 /* SandboxCallerStream.swift */; };
-		850DBE132740707DAFA2CE1A /* SandboxCallerScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE50F3E0E1D37001F469E9 /* SandboxCallerScenario.swift */; };
-		86481D5A24C66FA6147D22C1 /* SandboxEvidenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E093FEA2A163818E76C3CB47 /* SandboxEvidenceStore.swift */; };
-		879436CB4FEF4E43C17DB8A8 /* macOSAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1BFD58463E3ABD3055E71F /* macOSAssets.xcassets */; };
-		88B6DCBE351DC0872E810CC3 /* SandboxEvidenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E093FEA2A163818E76C3CB47 /* SandboxEvidenceStore.swift */; };
-		8D671774DEA09961139CE5CE /* SandboxFeatureControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E02A90CF06082C3C68A6CF /* SandboxFeatureControllers.swift */; };
-		979358142CB5E5D81C3EB664 /* SandboxCoordinatorScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A94D9A0C0D6685FCCC60D9 /* SandboxCoordinatorScenario.swift */; };
-		99FC711A6B191107D7AC0930 /* SandboxWorkerScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39193CBF30159294FC9B232 /* SandboxWorkerScenario.swift */; };
-		9C18D73BEF11729D25CB6562 /* SandboxCallerReplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF331BA75DC0A396F86E7295 /* SandboxCallerReplay.swift */; };
-		9D2BC62C68F4AF2777BF5861 /* InferPeerTelemetry in Frameworks */ = {isa = PBXBuildFile; productRef = B51FA3849D252357100E8162 /* InferPeerTelemetry */; };
-		9D941D475F25CC483A843C62 /* SandboxLocalAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C768C96066F1F13302F18 /* SandboxLocalAIService.swift */; };
-		9FF22D71D22C287BB659DEBA /* InferPeerWhisperKit in Frameworks */ = {isa = PBXBuildFile; productRef = C103E8EFE3A24A5A1CEF7D18 /* InferPeerWhisperKit */; };
-		A8B0F674317EAF3748252994 /* SandboxMLXRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C10C1204D925122D02EF5D /* SandboxMLXRunner.swift */; };
-		ACA4F748867B45CD837F6E6D /* SandboxCallerStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87746A4E6965F19ECC75585 /* SandboxCallerStream.swift */; };
-		AFB2228B806EFA6512789F2C /* InferPeerInference in Frameworks */ = {isa = PBXBuildFile; productRef = 790E9E06E4DABB5509562E3F /* InferPeerInference */; };
-		B286B0F56F7C403DE6EBB260 /* InferPeerModelStore in Frameworks */ = {isa = PBXBuildFile; productRef = 779EBB0D4A7DD7344CD6C3CD /* InferPeerModelStore */; };
-		B953466EFC699DFD8723FF30 /* SandboxAutomationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FA7BFB91DE6A070253744C /* SandboxAutomationRunner.swift */; };
-		C570DB21E2C8B3D8DA1A13A9 /* InferPeerModelStore in Frameworks */ = {isa = PBXBuildFile; productRef = FD9055B50DE83FD21BCB7DEA /* InferPeerModelStore */; };
-		C6257D3C503A2B0620456C7F /* SandboxFeatureControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E02A90CF06082C3C68A6CF /* SandboxFeatureControllers.swift */; };
-		C63B1C00AC01A8375A765025 /* InferPeerLlama in Frameworks */ = {isa = PBXBuildFile; productRef = F7291376505807D2716D63A7 /* InferPeerLlama */; };
-		C72B9A80E170073DAB6F47BA /* SandboxMLXRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C10C1204D925122D02EF5D /* SandboxMLXRunner.swift */; };
-		C99B0B209C3EC58C69F711AE /* InferPeerStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 85A64799D23A7881CA8F07D1 /* InferPeerStorage */; };
-		CCF6DE298741CA4E42A57AD2 /* InferPeerSandboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B01C8FC3430FB038CD742 /* InferPeerSandboxApp.swift */; };
-		CD95966CA2572F490BDA9D49 /* InferPeerSecurity in Frameworks */ = {isa = PBXBuildFile; productRef = 648FFEC8C801BF0A686C19AC /* InferPeerSecurity */; };
+		4B98023401EDB9707A22089B /* LocalNetworkEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFE2C81FF3DAEDAE72F7FE6 /* LocalNetworkEndpoint.swift */; };
+		4F7724F55375CBD6C23F0992 /* InferPeerApple in Frameworks */ = {isa = PBXBuildFile; productRef = A539755CE351C010D76463E6 /* InferPeerApple */; };
+		4FDCA28C2EA0FAE1938EA754 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42BC633E3074FFBAE5793F8A /* SharedAssets.xcassets */; };
+		57A60A8903001BAE8F02DBC7 /* SandboxClientRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94A1B230D021950CE85B6D /* SandboxClientRuntime.swift */; };
+		5B795EC0863EA5F1F79D7CAA /* ResourceHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57C0B0832D5DEC6CE4A678A /* ResourceHostView.swift */; };
+		5E0D72AF02801A99DEDE6ECC /* ResourceHostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B90618666099DD3C400C2 /* ResourceHostController.swift */; };
+		60244C07BC63375BC6985DAB /* InferPeerSandboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BC8743E6914561EF190A46 /* InferPeerSandboxApp.swift */; };
+		61ACC7D5F05C9C28637B5AB8 /* SandboxChatController+PhysicalTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F105527479814F11349333 /* SandboxChatController+PhysicalTesting.swift */; };
+		62F1CAE94B8AA3AC38C24C34 /* InferPeerInference in Frameworks */ = {isa = PBXBuildFile; productRef = ED3F979A37AB7F1A37F6A3EC /* InferPeerInference */; };
+		6B8177814266C11728B4D912 /* iOSAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F342D83420E7463753068C06 /* iOSAssets.xcassets */; };
+		7037372B4BB0F1A296F3F41B /* InferPeer in Frameworks */ = {isa = PBXBuildFile; productRef = FEE95BA740EFD272854F4CBF /* InferPeer */; };
+		76E9A6ED8A044B4868F8D993 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 5317BBCD2D4ADC23364E244E /* PrivacyInfo.xcprivacy */; };
+		7FC93F8D76F3A321B83B6DAF /* LocalNetworkEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFE2C81FF3DAEDAE72F7FE6 /* LocalNetworkEndpoint.swift */; };
+		81E49C6F64D29F0E2042492F /* ResourceHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57C0B0832D5DEC6CE4A678A /* ResourceHostView.swift */; };
+		8433500651667C68F25051B5 /* SandboxChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CBA3D3374CF05DCE9E5F2F /* SandboxChatController.swift */; };
+		89CAA3BE05F1F1C9143078B3 /* InferPeerGRPC in Frameworks */ = {isa = PBXBuildFile; productRef = C9B4342514D5CF8BB3AB8963 /* InferPeerGRPC */; };
+		90813691AA45432F37361CEA /* SandboxChatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85171768BDF7742B489695AB /* SandboxChatModels.swift */; };
+		98FD69BAC733030F1C96C5DD /* InferPeerSecurity in Frameworks */ = {isa = PBXBuildFile; productRef = A227609E255D9898E590EF61 /* InferPeerSecurity */; };
+		9D2BC62C68F4AF2777BF5861 /* InferPeerModelStore in Frameworks */ = {isa = PBXBuildFile; productRef = FD9055B50DE83FD21BCB7DEA /* InferPeerModelStore */; };
+		A82ADD69FC8C5EC72D8351AD /* InferPeerDiscovery in Frameworks */ = {isa = PBXBuildFile; productRef = 1BA94D55A1C99BA4E11E4E04 /* InferPeerDiscovery */; };
+		AA84ADD5FA57C51CD35B2E2C /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 5317BBCD2D4ADC23364E244E /* PrivacyInfo.xcprivacy */; };
+		AD8C43D93754B65A52826CB8 /* InferPeerGRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 80A4C23710C8D443BCA916B3 /* InferPeerGRPC */; };
+		B1F9BB6FEDA7D11D5833D0DA /* InferPeerModelStore in Frameworks */ = {isa = PBXBuildFile; productRef = E30CF78496A198E3CEBE47F0 /* InferPeerModelStore */; };
+		B2C50AD8DB6B050F566F47DF /* InferPeer in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9673BFA524736C9EA439AC /* InferPeer */; };
+		B498E6AB71AE2CFA1F030213 /* InferPeerMLX in Frameworks */ = {isa = PBXBuildFile; productRef = BBF10385C6F4548C26D1BA9D /* InferPeerMLX */; };
+		B8988CA27865F8DBBFF31830 /* InferPeerApple in Frameworks */ = {isa = PBXBuildFile; productRef = 20B5ABAA36ACF5D03FA7BC11 /* InferPeerApple */; };
+		C570DB21E2C8B3D8DA1A13A9 /* InferPeerSecurity in Frameworks */ = {isa = PBXBuildFile; productRef = 648FFEC8C801BF0A686C19AC /* InferPeerSecurity */; };
+		C7C3D315B24A872714DE45FF /* AppModelEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B07A35C08B1DE24E640E464 /* AppModelEnvironment.swift */; };
+		C9042BA9BC50F130E9C08D8E /* ResourceHostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B90618666099DD3C400C2 /* ResourceHostController.swift */; };
+		C99B0B209C3EC58C69F711AE /* InferPeerInference in Frameworks */ = {isa = PBXBuildFile; productRef = 7786A243503940DA6F1FDF22 /* InferPeerInference */; };
+		CBD21EF0652744330B982C2D /* InferPeerCore in Frameworks */ = {isa = PBXBuildFile; productRef = 6E663A3B78FDE0226BB0A1E7 /* InferPeerCore */; };
+		CD95966CA2572F490BDA9D49 /* InferPeerGRPC in Frameworks */ = {isa = PBXBuildFile; productRef = A46CD5008EE64AD314D7E9BA /* InferPeerGRPC */; };
 		CE8786D204405456FE8668F5 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42BC633E3074FFBAE5793F8A /* SharedAssets.xcassets */; };
-		D4A68617176D7B31CD68E920 /* SandboxClusterSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6316470826AC479DF0D1A /* SandboxClusterSupport.swift */; };
-		D5C424FF942A9B5BD08665EE /* SandboxSystemMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381663C5FDF3AED6FDC99B81 /* SandboxSystemMetrics.swift */; };
-		D5CFF11A28693969FA354D66 /* SandboxFailureMatrixRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EADA9C182E7EC236710F63 /* SandboxFailureMatrixRunner.swift */; };
+		D113A17B1DDD51EE8A990593 /* LocalNetworkEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFE2C81FF3DAEDAE72F7FE6 /* LocalNetworkEndpoint.swift */; };
+		D3D5E268D9ED08463849843A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 5317BBCD2D4ADC23364E244E /* PrivacyInfo.xcprivacy */; };
 		D96DFF5154EE8F99854FFDDF /* iOSAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F342D83420E7463753068C06 /* iOSAssets.xcassets */; };
-		DA988D14F7F2F9B8D4BB03B4 /* InferPeerWhisperKit in Frameworks */ = {isa = PBXBuildFile; productRef = F415D8E5D5894E8E201A350B /* InferPeerWhisperKit */; };
-		DC6E5508693F66825BB59D47 /* SandboxWorkerScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39193CBF30159294FC9B232 /* SandboxWorkerScenario.swift */; };
-		DCA324F7AAB99625CA3EE8EE /* SandboxCallerReplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF331BA75DC0A396F86E7295 /* SandboxCallerReplay.swift */; };
-		DD403321D6750641C5524108 /* InferPeerProtocol in Frameworks */ = {isa = PBXBuildFile; productRef = 38CED7A5318ECF457B3088F0 /* InferPeerProtocol */; };
-		DE5F3740B99E23285C3F77C7 /* InferPeerMLX in Frameworks */ = {isa = PBXBuildFile; productRef = 7D8B436C0E48FF923961A34E /* InferPeerMLX */; };
-		E14F119FCF27AD8FAD34A92A /* InferPeerLlama in Frameworks */ = {isa = PBXBuildFile; productRef = 7B22407F2D51EEF36EAAC92F /* InferPeerLlama */; };
-		E2180A4F001263BEAC8CF256 /* SandboxClusterRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961B24530B534174AFE48952 /* SandboxClusterRunner.swift */; };
-		E32C3B35CC20EBEA5603F41A /* SandboxClusterRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961B24530B534174AFE48952 /* SandboxClusterRunner.swift */; };
-		F438D569C3ED4DD0099C503A /* InferPeerApple in Frameworks */ = {isa = PBXBuildFile; productRef = A539755CE351C010D76463E6 /* InferPeerApple */; };
-		FD1D624EDFF3708BD311B522 /* SandboxValidationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474DB051183CA4E7F0992BC1 /* SandboxValidationRunner.swift */; };
-		FDDE0E67AEE74242A28672F0 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42BC633E3074FFBAE5793F8A /* SharedAssets.xcassets */; };
+		D993C3157C8020C86C6FA047 /* InferPeerDiscovery in Frameworks */ = {isa = PBXBuildFile; productRef = 4437AEF8A499C33AD8298C43 /* InferPeerDiscovery */; };
+		E28885938CFCD5854E624BE4 /* InferPeerMLX in Frameworks */ = {isa = PBXBuildFile; productRef = A5EE568D49E677C489247C87 /* InferPeerMLX */; };
+		E31A06F157D1EC549FE43E7E /* SandboxPairingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680BADB4F6810704E80F758D /* SandboxPairingView.swift */; };
+		E63CA612333133D4B19592B8 /* InferPeerSandboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C17005DDD1DED2DA18A0AD /* InferPeerSandboxUITests.swift */; };
+		EB7507B57ADC89359A734563 /* InferPeerSecurity in Frameworks */ = {isa = PBXBuildFile; productRef = 70474F09C98E6914ADA5CEBD /* InferPeerSecurity */; };
+		EBAEF527D840E5C91194BCAC /* InferPeerInference in Frameworks */ = {isa = PBXBuildFile; productRef = 8348505F23EFDF2CF3B2E787 /* InferPeerInference */; };
+		F8938D6C83D656480DA6ACEA /* InferPeerCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7B29D019DAB750392D4614F3 /* InferPeerCore */; };
+		FD076230DBD126D67BA8C80F /* macOSAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1BFD58463E3ABD3055E71F /* macOSAssets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F708EA9CA14B8D6F6868E7AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AD558CA8DA9DE81626D421A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89B9092F7F333A405FD86FB9;
+			remoteInfo = "InferPeerSandbox-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		083C768C96066F1F13302F18 /* SandboxLocalAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxLocalAIService.swift; sourceTree = "<group>"; };
-		24A94D9A0C0D6685FCCC60D9 /* SandboxCoordinatorScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxCoordinatorScenario.swift; sourceTree = "<group>"; };
-		25C10C1204D925122D02EF5D /* SandboxMLXRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxMLXRunner.swift; sourceTree = "<group>"; };
-		381663C5FDF3AED6FDC99B81 /* SandboxSystemMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxSystemMetrics.swift; sourceTree = "<group>"; };
-		3BF398B88CFCF03DFA4117ED /* InferPeerSandbox-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InferPeerSandbox-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E58A902E72AF06CDF56CA7 /* SandboxChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxChatView.swift; sourceTree = "<group>"; };
+		01C17005DDD1DED2DA18A0AD /* InferPeerSandboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferPeerSandboxUITests.swift; sourceTree = "<group>"; };
+		05BC8743E6914561EF190A46 /* InferPeerSandboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferPeerSandboxApp.swift; sourceTree = "<group>"; };
+		103B90618666099DD3C400C2 /* ResourceHostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceHostController.swift; sourceTree = "<group>"; };
+		24CBA3D3374CF05DCE9E5F2F /* SandboxChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxChatController.swift; sourceTree = "<group>"; };
+		3B07A35C08B1DE24E640E464 /* AppModelEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelEnvironment.swift; sourceTree = "<group>"; };
 		42BC633E3074FFBAE5793F8A /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
-		474DB051183CA4E7F0992BC1 /* SandboxValidationRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxValidationRunner.swift; sourceTree = "<group>"; };
-		73FA7BFB91DE6A070253744C /* SandboxAutomationRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxAutomationRunner.swift; sourceTree = "<group>"; };
-		89E02A90CF06082C3C68A6CF /* SandboxFeatureControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxFeatureControllers.swift; sourceTree = "<group>"; };
-		961B24530B534174AFE48952 /* SandboxClusterRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxClusterRunner.swift; sourceTree = "<group>"; };
-		A42F86E8DB811220C0310300 /* SandboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxView.swift; sourceTree = "<group>"; };
+		51E6701A2A02173E07BE4177 /* InferPeerResourceHost-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InferPeerResourceHost-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5317BBCD2D4ADC23364E244E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		680BADB4F6810704E80F758D /* SandboxPairingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxPairingView.swift; sourceTree = "<group>"; };
+		7A9E12311B66C71CD1F4DEA6 /* InferPeerSandboxUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = InferPeerSandboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85171768BDF7742B489695AB /* SandboxChatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxChatModels.swift; sourceTree = "<group>"; };
+		975B440F20EA6AAAC0E470DC /* InferPeerResourceHost-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InferPeerResourceHost-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6230BF07DDA4A2E1234F25C /* inferpeer-swift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "inferpeer-swift"; path = "../inferpeer-swift"; sourceTree = SOURCE_ROOT; };
-		A78B4E03810F1CD52B9377CC /* SandboxInterruptOnceBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxInterruptOnceBackend.swift; sourceTree = "<group>"; };
-		B39193CBF30159294FC9B232 /* SandboxWorkerScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxWorkerScenario.swift; sourceTree = "<group>"; };
+		ABFE2C81FF3DAEDAE72F7FE6 /* LocalNetworkEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNetworkEndpoint.swift; sourceTree = "<group>"; };
+		AE94A1B230D021950CE85B6D /* SandboxClientRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxClientRuntime.swift; sourceTree = "<group>"; };
+		C57C0B0832D5DEC6CE4A678A /* ResourceHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceHostView.swift; sourceTree = "<group>"; };
 		C6DDCEA64792C7F91E59C7B9 /* InferPeerSandbox-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "InferPeerSandbox-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D87746A4E6965F19ECC75585 /* SandboxCallerStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxCallerStream.swift; sourceTree = "<group>"; };
+		C9F105527479814F11349333 /* SandboxChatController+PhysicalTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SandboxChatController+PhysicalTesting.swift"; sourceTree = "<group>"; };
 		DA1BFD58463E3ABD3055E71F /* macOSAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = macOSAssets.xcassets; sourceTree = "<group>"; };
-		E093FEA2A163818E76C3CB47 /* SandboxEvidenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxEvidenceStore.swift; sourceTree = "<group>"; };
-		E0E9A2900F66C0A60AA6ACAA /* SandboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxViewModel.swift; sourceTree = "<group>"; };
-		E57B01C8FC3430FB038CD742 /* InferPeerSandboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferPeerSandboxApp.swift; sourceTree = "<group>"; };
-		EEA6316470826AC479DF0D1A /* SandboxClusterSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxClusterSupport.swift; sourceTree = "<group>"; };
+		DC938AD9D8B9E3AE3BC71F6D /* InferPeerResourceHostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferPeerResourceHostApp.swift; sourceTree = "<group>"; };
 		F342D83420E7463753068C06 /* iOSAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iOSAssets.xcassets; sourceTree = "<group>"; };
-		F4DE50F3E0E1D37001F469E9 /* SandboxCallerScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxCallerScenario.swift; sourceTree = "<group>"; };
-		F9EADA9C182E7EC236710F63 /* SandboxFailureMatrixRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxFailureMatrixRunner.swift; sourceTree = "<group>"; };
-		FF331BA75DC0A396F86E7295 /* SandboxCallerReplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxCallerReplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4DC1BA6E0CC6D36B89BC664A /* Frameworks */ = {
+		3BD18616B17EC8FB8B293C23 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0554B22F8F6F8D95E3A797EF /* InferPeer in Frameworks */,
-				03F0F345C5EE8A6A91FB74D9 /* InferPeerCore in Frameworks */,
-				AFB2228B806EFA6512789F2C /* InferPeerInference in Frameworks */,
-				DD403321D6750641C5524108 /* InferPeerProtocol in Frameworks */,
-				2F0EEAF60C91180BDFDD4DFB /* InferPeerSecurity in Frameworks */,
-				079AFE09E3107744165D4428 /* InferPeerStorage in Frameworks */,
-				5219EF0C08292D93AE8002B9 /* InferPeerTelemetry in Frameworks */,
-				B286B0F56F7C403DE6EBB260 /* InferPeerModelStore in Frameworks */,
-				726498EBEE1DF429AD4903D2 /* InferPeerApple in Frameworks */,
-				DE5F3740B99E23285C3F77C7 /* InferPeerMLX in Frameworks */,
-				C63B1C00AC01A8375A765025 /* InferPeerLlama in Frameworks */,
-				9FF22D71D22C287BB659DEBA /* InferPeerWhisperKit in Frameworks */,
+				B2C50AD8DB6B050F566F47DF /* InferPeer in Frameworks */,
+				B8988CA27865F8DBBFF31830 /* InferPeerApple in Frameworks */,
+				CBD21EF0652744330B982C2D /* InferPeerCore in Frameworks */,
+				A82ADD69FC8C5EC72D8351AD /* InferPeerDiscovery in Frameworks */,
+				AD8C43D93754B65A52826CB8 /* InferPeerGRPC in Frameworks */,
+				62F1CAE94B8AA3AC38C24C34 /* InferPeerInference in Frameworks */,
+				25DF3791A4D18DC0D9AC76D8 /* InferPeerLlama in Frameworks */,
+				E28885938CFCD5854E624BE4 /* InferPeerMLX in Frameworks */,
+				03FF6120252798B0A8B84C81 /* InferPeerModelStore in Frameworks */,
+				98FD69BAC733030F1C96C5DD /* InferPeerSecurity in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		499CD38644269A18500C26D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7037372B4BB0F1A296F3F41B /* InferPeer in Frameworks */,
+				1C865EDA76DC346A57839B28 /* InferPeerApple in Frameworks */,
+				F8938D6C83D656480DA6ACEA /* InferPeerCore in Frameworks */,
+				D993C3157C8020C86C6FA047 /* InferPeerDiscovery in Frameworks */,
+				89CAA3BE05F1F1C9143078B3 /* InferPeerGRPC in Frameworks */,
+				EBAEF527D840E5C91194BCAC /* InferPeerInference in Frameworks */,
+				3F2524853E6600CAB904850A /* InferPeerLlama in Frameworks */,
+				B498E6AB71AE2CFA1F030213 /* InferPeerMLX in Frameworks */,
+				B1F9BB6FEDA7D11D5833D0DA /* InferPeerModelStore in Frameworks */,
+				EB7507B57ADC89359A734563 /* InferPeerSecurity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,23 +140,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B7755345A73A8CC9F1753FA /* InferPeer in Frameworks */,
-				4F7724F55375CBD6C23F0992 /* InferPeerCore in Frameworks */,
-				3EE453C8BC58E7DB7C63E006 /* InferPeerInference in Frameworks */,
-				078089A715B9A2B6B7152C7B /* InferPeerProtocol in Frameworks */,
-				CD95966CA2572F490BDA9D49 /* InferPeerSecurity in Frameworks */,
-				C99B0B209C3EC58C69F711AE /* InferPeerStorage in Frameworks */,
-				9D2BC62C68F4AF2777BF5861 /* InferPeerTelemetry in Frameworks */,
-				C570DB21E2C8B3D8DA1A13A9 /* InferPeerModelStore in Frameworks */,
-				F438D569C3ED4DD0099C503A /* InferPeerApple in Frameworks */,
-				4D4009421920E6F371EB31A7 /* InferPeerMLX in Frameworks */,
-				E14F119FCF27AD8FAD34A92A /* InferPeerLlama in Frameworks */,
-				DA988D14F7F2F9B8D4BB03B4 /* InferPeerWhisperKit in Frameworks */,
+				4F7724F55375CBD6C23F0992 /* InferPeerApple in Frameworks */,
+				3EE453C8BC58E7DB7C63E006 /* InferPeerCore in Frameworks */,
+				078089A715B9A2B6B7152C7B /* InferPeerDiscovery in Frameworks */,
+				CD95966CA2572F490BDA9D49 /* InferPeerGRPC in Frameworks */,
+				C99B0B209C3EC58C69F711AE /* InferPeerInference in Frameworks */,
+				9D2BC62C68F4AF2777BF5861 /* InferPeerModelStore in Frameworks */,
+				C570DB21E2C8B3D8DA1A13A9 /* InferPeerSecurity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A9F3166760EFF031F85D883 /* iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				01C17005DDD1DED2DA18A0AD /* InferPeerSandboxUITests.swift */,
+			);
+			name = iOSUITests;
+			path = Tests/iOSUITests;
+			sourceTree = "<group>";
+		};
 		21D014CD8BECD68DE900675B /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,36 +173,48 @@
 		224319349FD3CE3A38039648 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				975B440F20EA6AAAC0E470DC /* InferPeerResourceHost-iOS.app */,
+				51E6701A2A02173E07BE4177 /* InferPeerResourceHost-macOS.app */,
 				C6DDCEA64792C7F91E59C7B9 /* InferPeerSandbox-iOS.app */,
-				3BF398B88CFCF03DFA4117ED /* InferPeerSandbox-macOS.app */,
+				7A9E12311B66C71CD1F4DEA6 /* InferPeerSandboxUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		435D11589EC1027DC2BB704A /* Sources */ = {
+		31276D2DC7CFEC207363C837 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				E57B01C8FC3430FB038CD742 /* InferPeerSandboxApp.swift */,
-				73FA7BFB91DE6A070253744C /* SandboxAutomationRunner.swift */,
-				FF331BA75DC0A396F86E7295 /* SandboxCallerReplay.swift */,
-				F4DE50F3E0E1D37001F469E9 /* SandboxCallerScenario.swift */,
-				D87746A4E6965F19ECC75585 /* SandboxCallerStream.swift */,
-				961B24530B534174AFE48952 /* SandboxClusterRunner.swift */,
-				EEA6316470826AC479DF0D1A /* SandboxClusterSupport.swift */,
-				24A94D9A0C0D6685FCCC60D9 /* SandboxCoordinatorScenario.swift */,
-				E093FEA2A163818E76C3CB47 /* SandboxEvidenceStore.swift */,
-				F9EADA9C182E7EC236710F63 /* SandboxFailureMatrixRunner.swift */,
-				89E02A90CF06082C3C68A6CF /* SandboxFeatureControllers.swift */,
-				A78B4E03810F1CD52B9377CC /* SandboxInterruptOnceBackend.swift */,
-				083C768C96066F1F13302F18 /* SandboxLocalAIService.swift */,
-				25C10C1204D925122D02EF5D /* SandboxMLXRunner.swift */,
-				381663C5FDF3AED6FDC99B81 /* SandboxSystemMetrics.swift */,
-				474DB051183CA4E7F0992BC1 /* SandboxValidationRunner.swift */,
-				A42F86E8DB811220C0310300 /* SandboxView.swift */,
-				E0E9A2900F66C0A60AA6ACAA /* SandboxViewModel.swift */,
-				B39193CBF30159294FC9B232 /* SandboxWorkerScenario.swift */,
+				3B07A35C08B1DE24E640E464 /* AppModelEnvironment.swift */,
+				ABFE2C81FF3DAEDAE72F7FE6 /* LocalNetworkEndpoint.swift */,
 			);
-			path = Sources;
+			name = Shared;
+			path = Sources/Shared;
+			sourceTree = "<group>";
+		};
+		4ABE6B3E6BCE38E51F2BB173 /* ResourceHost */ = {
+			isa = PBXGroup;
+			children = (
+				DC938AD9D8B9E3AE3BC71F6D /* InferPeerResourceHostApp.swift */,
+				103B90618666099DD3C400C2 /* ResourceHostController.swift */,
+				C57C0B0832D5DEC6CE4A678A /* ResourceHostView.swift */,
+			);
+			name = ResourceHost;
+			path = Sources/ResourceHost;
+			sourceTree = "<group>";
+		};
+		C3093F48D89ABA160BEE7BB0 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				05BC8743E6914561EF190A46 /* InferPeerSandboxApp.swift */,
+				24CBA3D3374CF05DCE9E5F2F /* SandboxChatController.swift */,
+				C9F105527479814F11349333 /* SandboxChatController+PhysicalTesting.swift */,
+				85171768BDF7742B489695AB /* SandboxChatModels.swift */,
+				00E58A902E72AF06CDF56CA7 /* SandboxChatView.swift */,
+				AE94A1B230D021950CE85B6D /* SandboxClientRuntime.swift */,
+				680BADB4F6810704E80F758D /* SandboxPairingView.swift */,
+			);
+			name = Client;
+			path = Sources/Client;
 			sourceTree = "<group>";
 		};
 		C7D0303E38FC27E0F80526E8 /* Resources */ = {
@@ -193,6 +222,7 @@
 			children = (
 				F342D83420E7463753068C06 /* iOSAssets.xcassets */,
 				DA1BFD58463E3ABD3055E71F /* macOSAssets.xcassets */,
+				5317BBCD2D4ADC23364E244E /* PrivacyInfo.xcprivacy */,
 				42BC633E3074FFBAE5793F8A /* SharedAssets.xcassets */,
 			);
 			path = Resources;
@@ -201,9 +231,12 @@
 		DB83964BD262D81452A79653 = {
 			isa = PBXGroup;
 			children = (
+				C3093F48D89ABA160BEE7BB0 /* Client */,
+				1A9F3166760EFF031F85D883 /* iOSUITests */,
 				21D014CD8BECD68DE900675B /* Packages */,
+				4ABE6B3E6BCE38E51F2BB173 /* ResourceHost */,
 				C7D0303E38FC27E0F80526E8 /* Resources */,
-				435D11589EC1027DC2BB704A /* Sources */,
+				31276D2DC7CFEC207363C837 /* Shared */,
 				224319349FD3CE3A38039648 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -211,6 +244,35 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		55D057A70CEB49F716B8E00C /* InferPeerResourceHost-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EBB3087F8DC03F876B90481 /* Build configuration list for PBXNativeTarget "InferPeerResourceHost-macOS" */;
+			buildPhases = (
+				21835DA76B25ACD7274368A3 /* Sources */,
+				060EF5295FC06A3AB542B0FC /* Resources */,
+				3BD18616B17EC8FB8B293C23 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "InferPeerResourceHost-macOS";
+			packageProductDependencies = (
+				1D9673BFA524736C9EA439AC /* InferPeer */,
+				20B5ABAA36ACF5D03FA7BC11 /* InferPeerApple */,
+				6E663A3B78FDE0226BB0A1E7 /* InferPeerCore */,
+				1BA94D55A1C99BA4E11E4E04 /* InferPeerDiscovery */,
+				80A4C23710C8D443BCA916B3 /* InferPeerGRPC */,
+				ED3F979A37AB7F1A37F6A3EC /* InferPeerInference */,
+				9640FC17C6E97B89EE1B4204 /* InferPeerLlama */,
+				A5EE568D49E677C489247C87 /* InferPeerMLX */,
+				2D9F953D6BC3946FBB9969E1 /* InferPeerModelStore */,
+				A227609E255D9898E590EF61 /* InferPeerSecurity */,
+			);
+			productName = "InferPeerResourceHost-macOS";
+			productReference = 51E6701A2A02173E07BE4177 /* InferPeerResourceHost-macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		89B9092F7F333A405FD86FB9 /* InferPeerSandbox-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CC2A293C37EF2FFF29FBA67 /* Build configuration list for PBXNativeTarget "InferPeerSandbox-iOS" */;
@@ -226,51 +288,63 @@
 			name = "InferPeerSandbox-iOS";
 			packageProductDependencies = (
 				4134378BF1C771250773EC50 /* InferPeer */,
-				8B6D8963C1DA02A07B84C74C /* InferPeerCore */,
-				7786A243503940DA6F1FDF22 /* InferPeerInference */,
-				1A0C79CAA61EE238360F031A /* InferPeerProtocol */,
-				648FFEC8C801BF0A686C19AC /* InferPeerSecurity */,
-				85A64799D23A7881CA8F07D1 /* InferPeerStorage */,
-				B51FA3849D252357100E8162 /* InferPeerTelemetry */,
-				FD9055B50DE83FD21BCB7DEA /* InferPeerModelStore */,
 				A539755CE351C010D76463E6 /* InferPeerApple */,
-				EAAF50BC6CB08A5CE7090602 /* InferPeerMLX */,
-				7B22407F2D51EEF36EAAC92F /* InferPeerLlama */,
-				F415D8E5D5894E8E201A350B /* InferPeerWhisperKit */,
+				8B6D8963C1DA02A07B84C74C /* InferPeerCore */,
+				FC9D42C20690FB75A8E8224B /* InferPeerDiscovery */,
+				A46CD5008EE64AD314D7E9BA /* InferPeerGRPC */,
+				7786A243503940DA6F1FDF22 /* InferPeerInference */,
+				FD9055B50DE83FD21BCB7DEA /* InferPeerModelStore */,
+				648FFEC8C801BF0A686C19AC /* InferPeerSecurity */,
 			);
 			productName = "InferPeerSandbox-iOS";
 			productReference = C6DDCEA64792C7F91E59C7B9 /* InferPeerSandbox-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DDA00A0FEE8D072FD62D7AFA /* InferPeerSandbox-macOS */ = {
+		92D1644223AB3A3496F0B734 /* InferPeerSandboxUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F2DD7576154D69E44455E567 /* Build configuration list for PBXNativeTarget "InferPeerSandbox-macOS" */;
+			buildConfigurationList = 33DA914890FBA65311D478EA /* Build configuration list for PBXNativeTarget "InferPeerSandboxUITests" */;
 			buildPhases = (
-				A70A39BFE0CCA29B86E18775 /* Sources */,
-				F03FAC9EC206E05F7B4CFB3F /* Resources */,
-				4DC1BA6E0CC6D36B89BC664A /* Frameworks */,
+				83DBA234388CBFAD6C0BBD61 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF1C3EAB0DC6120F1B4FA1FE /* PBXTargetDependency */,
+			);
+			name = InferPeerSandboxUITests;
+			packageProductDependencies = (
+			);
+			productName = InferPeerSandboxUITests;
+			productReference = 7A9E12311B66C71CD1F4DEA6 /* InferPeerSandboxUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E24F6BC61A84771895927AF9 /* InferPeerResourceHost-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18337A92C6642FE90C8A11FE /* Build configuration list for PBXNativeTarget "InferPeerResourceHost-iOS" */;
+			buildPhases = (
+				15538BC4848BECD10FED11FC /* Sources */,
+				27CBA79565E340495FF859F4 /* Resources */,
+				499CD38644269A18500C26D3 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "InferPeerSandbox-macOS";
+			name = "InferPeerResourceHost-iOS";
 			packageProductDependencies = (
-				11AA39AD89AEE65089BEF182 /* InferPeer */,
-				DDCBC0FFE7EA3F1B1DFC61B7 /* InferPeerCore */,
-				790E9E06E4DABB5509562E3F /* InferPeerInference */,
-				38CED7A5318ECF457B3088F0 /* InferPeerProtocol */,
-				615DD5F82AD291EDE9DCF0C7 /* InferPeerSecurity */,
-				C02A8B93AD5ECFBF8EA5C506 /* InferPeerStorage */,
-				55DDC7604761593C1AD3D79B /* InferPeerTelemetry */,
-				779EBB0D4A7DD7344CD6C3CD /* InferPeerModelStore */,
-				9CC1C24521B1B4A913CEE9C8 /* InferPeerApple */,
-				7D8B436C0E48FF923961A34E /* InferPeerMLX */,
-				F7291376505807D2716D63A7 /* InferPeerLlama */,
-				C103E8EFE3A24A5A1CEF7D18 /* InferPeerWhisperKit */,
+				FEE95BA740EFD272854F4CBF /* InferPeer */,
+				5C4D339D0ECA35D73E125F04 /* InferPeerApple */,
+				7B29D019DAB750392D4614F3 /* InferPeerCore */,
+				4437AEF8A499C33AD8298C43 /* InferPeerDiscovery */,
+				C9B4342514D5CF8BB3AB8963 /* InferPeerGRPC */,
+				8348505F23EFDF2CF3B2E787 /* InferPeerInference */,
+				C9D0B02DFC4E88C6D8592002 /* InferPeerLlama */,
+				BBF10385C6F4548C26D1BA9D /* InferPeerMLX */,
+				E30CF78496A198E3CEBE47F0 /* InferPeerModelStore */,
+				70474F09C98E6914ADA5CEBD /* InferPeerSecurity */,
 			);
-			productName = "InferPeerSandbox-macOS";
-			productReference = 3BF398B88CFCF03DFA4117ED /* InferPeerSandbox-macOS.app */;
+			productName = "InferPeerResourceHost-iOS";
+			productReference = 975B440F20EA6AAAC0E470DC /* InferPeerResourceHost-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -282,11 +356,20 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					55D057A70CEB49F716B8E00C = {
+						DevelopmentTeam = R3645Z5958;
+						ProvisioningStyle = Automatic;
+					};
 					89B9092F7F333A405FD86FB9 = {
 						DevelopmentTeam = R3645Z5958;
 						ProvisioningStyle = Automatic;
 					};
-					DDA00A0FEE8D072FD62D7AFA = {
+					92D1644223AB3A3496F0B734 = {
+						DevelopmentTeam = R3645Z5958;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 89B9092F7F333A405FD86FB9;
+					};
+					E24F6BC61A84771895927AF9 = {
 						DevelopmentTeam = R3645Z5958;
 						ProvisioningStyle = Automatic;
 					};
@@ -310,94 +393,128 @@
 			projectRoot = "";
 			targets = (
 				89B9092F7F333A405FD86FB9 /* InferPeerSandbox-iOS */,
-				DDA00A0FEE8D072FD62D7AFA /* InferPeerSandbox-macOS */,
+				E24F6BC61A84771895927AF9 /* InferPeerResourceHost-iOS */,
+				55D057A70CEB49F716B8E00C /* InferPeerResourceHost-macOS */,
+				92D1644223AB3A3496F0B734 /* InferPeerSandboxUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		060EF5295FC06A3AB542B0FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA84ADD5FA57C51CD35B2E2C /* PrivacyInfo.xcprivacy in Resources */,
+				4FDCA28C2EA0FAE1938EA754 /* SharedAssets.xcassets in Resources */,
+				FD076230DBD126D67BA8C80F /* macOSAssets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27CBA79565E340495FF859F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76E9A6ED8A044B4868F8D993 /* PrivacyInfo.xcprivacy in Resources */,
+				1F14CBB3BFD28F242DEDB64A /* SharedAssets.xcassets in Resources */,
+				6B8177814266C11728B4D912 /* iOSAssets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A8605008DF6CF3C3B2EE91EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D5E268D9ED08463849843A /* PrivacyInfo.xcprivacy in Resources */,
 				CE8786D204405456FE8668F5 /* SharedAssets.xcassets in Resources */,
 				D96DFF5154EE8F99854FFDDF /* iOSAssets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F03FAC9EC206E05F7B4CFB3F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FDDE0E67AEE74242A28672F0 /* SharedAssets.xcassets in Resources */,
-				879436CB4FEF4E43C17DB8A8 /* macOSAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		15538BC4848BECD10FED11FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21F8B5C7CDD58A2CFFB8A0A7 /* AppModelEnvironment.swift in Sources */,
+				3F776D6A7E71420AC6FF4991 /* InferPeerResourceHostApp.swift in Sources */,
+				D113A17B1DDD51EE8A990593 /* LocalNetworkEndpoint.swift in Sources */,
+				C9042BA9BC50F130E9C08D8E /* ResourceHostController.swift in Sources */,
+				5B795EC0863EA5F1F79D7CAA /* ResourceHostView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21835DA76B25ACD7274368A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7C3D315B24A872714DE45FF /* AppModelEnvironment.swift in Sources */,
+				195CFF2C657134BF8D2157B6 /* InferPeerResourceHostApp.swift in Sources */,
+				7FC93F8D76F3A321B83B6DAF /* LocalNetworkEndpoint.swift in Sources */,
+				5E0D72AF02801A99DEDE6ECC /* ResourceHostController.swift in Sources */,
+				81E49C6F64D29F0E2042492F /* ResourceHostView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3C6DE3C133F5F267CD8F074E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCF6DE298741CA4E42A57AD2 /* InferPeerSandboxApp.swift in Sources */,
-				B953466EFC699DFD8723FF30 /* SandboxAutomationRunner.swift in Sources */,
-				DCA324F7AAB99625CA3EE8EE /* SandboxCallerReplay.swift in Sources */,
-				29DCC01DC8202847826A014A /* SandboxCallerScenario.swift in Sources */,
-				ACA4F748867B45CD837F6E6D /* SandboxCallerStream.swift in Sources */,
-				E2180A4F001263BEAC8CF256 /* SandboxClusterRunner.swift in Sources */,
-				33CE524A99B12B8CD11166DF /* SandboxClusterSupport.swift in Sources */,
-				10FC9ECFA30B0A4D431F6673 /* SandboxCoordinatorScenario.swift in Sources */,
-				86481D5A24C66FA6147D22C1 /* SandboxEvidenceStore.swift in Sources */,
-				66771DE911BD6351A88FF760 /* SandboxFailureMatrixRunner.swift in Sources */,
-				8D671774DEA09961139CE5CE /* SandboxFeatureControllers.swift in Sources */,
-				61894381196B8CD6841E813C /* SandboxInterruptOnceBackend.swift in Sources */,
-				9D941D475F25CC483A843C62 /* SandboxLocalAIService.swift in Sources */,
-				A8B0F674317EAF3748252994 /* SandboxMLXRunner.swift in Sources */,
-				4C4C0E87E03D98D369F7DE9C /* SandboxSystemMetrics.swift in Sources */,
-				2AA38E8926DD24E51E2C41C1 /* SandboxValidationRunner.swift in Sources */,
-				30B5EC3F54E20701E88F7151 /* SandboxView.swift in Sources */,
-				44048C41F7890AF6A2991749 /* SandboxViewModel.swift in Sources */,
-				99FC711A6B191107D7AC0930 /* SandboxWorkerScenario.swift in Sources */,
+				60244C07BC63375BC6985DAB /* InferPeerSandboxApp.swift in Sources */,
+				4B98023401EDB9707A22089B /* LocalNetworkEndpoint.swift in Sources */,
+				61ACC7D5F05C9C28637B5AB8 /* SandboxChatController+PhysicalTesting.swift in Sources */,
+				8433500651667C68F25051B5 /* SandboxChatController.swift in Sources */,
+				90813691AA45432F37361CEA /* SandboxChatModels.swift in Sources */,
+				2E568E4BAE2D8A10481DE09D /* SandboxChatView.swift in Sources */,
+				57A60A8903001BAE8F02DBC7 /* SandboxClientRuntime.swift in Sources */,
+				E31A06F157D1EC549FE43E7E /* SandboxPairingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A70A39BFE0CCA29B86E18775 /* Sources */ = {
+		83DBA234388CBFAD6C0BBD61 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E9DB7835EB9F0B084B237C7 /* InferPeerSandboxApp.swift in Sources */,
-				3C1D0C6935B571CF953A3F8F /* SandboxAutomationRunner.swift in Sources */,
-				9C18D73BEF11729D25CB6562 /* SandboxCallerReplay.swift in Sources */,
-				850DBE132740707DAFA2CE1A /* SandboxCallerScenario.swift in Sources */,
-				7EC69A80B2827E7DF1036EB0 /* SandboxCallerStream.swift in Sources */,
-				E32C3B35CC20EBEA5603F41A /* SandboxClusterRunner.swift in Sources */,
-				D4A68617176D7B31CD68E920 /* SandboxClusterSupport.swift in Sources */,
-				979358142CB5E5D81C3EB664 /* SandboxCoordinatorScenario.swift in Sources */,
-				88B6DCBE351DC0872E810CC3 /* SandboxEvidenceStore.swift in Sources */,
-				D5CFF11A28693969FA354D66 /* SandboxFailureMatrixRunner.swift in Sources */,
-				C6257D3C503A2B0620456C7F /* SandboxFeatureControllers.swift in Sources */,
-				2A3AE2EE2B887C436373E1BC /* SandboxInterruptOnceBackend.swift in Sources */,
-				161798D01E8047F978D4ADE4 /* SandboxLocalAIService.swift in Sources */,
-				C72B9A80E170073DAB6F47BA /* SandboxMLXRunner.swift in Sources */,
-				D5C424FF942A9B5BD08665EE /* SandboxSystemMetrics.swift in Sources */,
-				FD1D624EDFF3708BD311B522 /* SandboxValidationRunner.swift in Sources */,
-				01335D2F91AE4D9E5E93BA44 /* SandboxView.swift in Sources */,
-				2865645BC7AEAACAD67D4876 /* SandboxViewModel.swift in Sources */,
-				DC6E5508693F66825BB59D47 /* SandboxWorkerScenario.swift in Sources */,
+				E63CA612333133D4B19592B8 /* InferPeerSandboxUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FF1C3EAB0DC6120F1B4FA1FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89B9092F7F333A405FD86FB9 /* InferPeerSandbox-iOS */;
+			targetProxy = F708EA9CA14B8D6F6868E7AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		010B484F3F8DD095AF6B9A0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.kodlabs.inferpeer.sandbox.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				TEST_TARGET_NAME = "InferPeerSandbox-iOS";
+			};
+			name = Debug;
+		};
 		0DEAEF7B7B3554DC76199E43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-iOS";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "Support/iOS-Info.plist";
+				INFOPLIST_FILE = "Support/Sandbox-iOS-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -405,11 +522,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = in.kodlabs.inferpeer.sandbox;
 				PRODUCT_NAME = InferPeerSandbox;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
-		1EFC5F9D2C6C67511384EEDD /* Debug */ = {
+		1ACD04998C9446916A81040E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-macOS";
@@ -420,11 +537,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = in.kodlabs.inferpeer.sandbox.mac;
-				PRODUCT_NAME = InferPeerSandbox;
+				PRODUCT_BUNDLE_IDENTIFIER = in.kodlabs.inferpeer.resourcehost.mac;
+				PRODUCT_NAME = InferPeerResource;
 				SDKROOT = macosx;
 			};
-			name = Debug;
+			name = Release;
 		};
 		2C4E330D5BCAD60A87083722 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -461,6 +578,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = R3645Z5958;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -476,6 +594,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -486,6 +605,23 @@
 				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
+		};
+		3171DF0B0E804FEBEDDE87FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-iOS";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Support/ResourceHost-iOS-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.kodlabs.inferpeer.resourcehost;
+				PRODUCT_NAME = InferPeerResource;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
 		};
 		519AF7699BE833D6DBF7D810 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -522,6 +658,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = R3645Z5958;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -543,6 +680,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -560,7 +698,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-iOS";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "Support/iOS-Info.plist";
+				INFOPLIST_FILE = "Support/Sandbox-iOS-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -568,11 +706,45 @@
 				PRODUCT_BUNDLE_IDENTIFIER = in.kodlabs.inferpeer.sandbox;
 				PRODUCT_NAME = InferPeerSandbox;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
-		F02AB24098CB97C783C743E8 /* Release */ = {
+		B90158D5AEE2E2B4665AA01E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.kodlabs.inferpeer.sandbox.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				TEST_TARGET_NAME = "InferPeerSandbox-iOS";
+			};
+			name = Release;
+		};
+		DD0667F2466F425B4A16518C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-iOS";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Support/ResourceHost-iOS-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.kodlabs.inferpeer.resourcehost;
+				PRODUCT_NAME = InferPeerResource;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		DEB5CDF6ADD37CEA286748F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-macOS";
@@ -583,15 +755,42 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = in.kodlabs.inferpeer.sandbox.mac;
-				PRODUCT_NAME = InferPeerSandbox;
+				PRODUCT_BUNDLE_IDENTIFIER = in.kodlabs.inferpeer.resourcehost.mac;
+				PRODUCT_NAME = InferPeerResource;
 				SDKROOT = macosx;
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		18337A92C6642FE90C8A11FE /* Build configuration list for PBXNativeTarget "InferPeerResourceHost-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3171DF0B0E804FEBEDDE87FD /* Debug */,
+				DD0667F2466F425B4A16518C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		33DA914890FBA65311D478EA /* Build configuration list for PBXNativeTarget "InferPeerSandboxUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				010B484F3F8DD095AF6B9A0D /* Debug */,
+				B90158D5AEE2E2B4665AA01E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3EBB3087F8DC03F876B90481 /* Build configuration list for PBXNativeTarget "InferPeerResourceHost-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEB5CDF6ADD37CEA286748F0 /* Debug */,
+				1ACD04998C9446916A81040E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		9CC2A293C37EF2FFF29FBA67 /* Build configuration list for PBXNativeTarget "InferPeerSandbox-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -610,15 +809,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		F2DD7576154D69E44455E567 /* Build configuration list for PBXNativeTarget "InferPeerSandbox-macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1EFC5F9D2C6C67511384EEDD /* Debug */,
-				F02AB24098CB97C783C743E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
@@ -629,31 +819,43 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		11AA39AD89AEE65089BEF182 /* InferPeer */ = {
+		1BA94D55A1C99BA4E11E4E04 /* InferPeerDiscovery */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InferPeerDiscovery;
+		};
+		1D9673BFA524736C9EA439AC /* InferPeer */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = InferPeer;
 		};
-		1A0C79CAA61EE238360F031A /* InferPeerProtocol */ = {
+		20B5ABAA36ACF5D03FA7BC11 /* InferPeerApple */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = InferPeerProtocol;
+			productName = InferPeerApple;
 		};
-		38CED7A5318ECF457B3088F0 /* InferPeerProtocol */ = {
+		2D9F953D6BC3946FBB9969E1 /* InferPeerModelStore */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = InferPeerProtocol;
+			productName = InferPeerModelStore;
 		};
 		4134378BF1C771250773EC50 /* InferPeer */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = InferPeer;
 		};
-		55DDC7604761593C1AD3D79B /* InferPeerTelemetry */ = {
+		4437AEF8A499C33AD8298C43 /* InferPeerDiscovery */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = InferPeerTelemetry;
+			productName = InferPeerDiscovery;
 		};
-		615DD5F82AD291EDE9DCF0C7 /* InferPeerSecurity */ = {
+		5C4D339D0ECA35D73E125F04 /* InferPeerApple */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InferPeerApple;
+		};
+		648FFEC8C801BF0A686C19AC /* InferPeerSecurity */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = InferPeerSecurity;
 		};
-		648FFEC8C801BF0A686C19AC /* InferPeerSecurity */ = {
+		6E663A3B78FDE0226BB0A1E7 /* InferPeerCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InferPeerCore;
+		};
+		70474F09C98E6914ADA5CEBD /* InferPeerSecurity */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = InferPeerSecurity;
 		};
@@ -661,69 +863,73 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = InferPeerInference;
 		};
-		779EBB0D4A7DD7344CD6C3CD /* InferPeerModelStore */ = {
+		7B29D019DAB750392D4614F3 /* InferPeerCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = InferPeerModelStore;
+			productName = InferPeerCore;
 		};
-		790E9E06E4DABB5509562E3F /* InferPeerInference */ = {
+		80A4C23710C8D443BCA916B3 /* InferPeerGRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InferPeerGRPC;
+		};
+		8348505F23EFDF2CF3B2E787 /* InferPeerInference */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = InferPeerInference;
-		};
-		7B22407F2D51EEF36EAAC92F /* InferPeerLlama */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = InferPeerLlama;
-		};
-		7D8B436C0E48FF923961A34E /* InferPeerMLX */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = InferPeerMLX;
-		};
-		85A64799D23A7881CA8F07D1 /* InferPeerStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = InferPeerStorage;
 		};
 		8B6D8963C1DA02A07B84C74C /* InferPeerCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = InferPeerCore;
 		};
-		9CC1C24521B1B4A913CEE9C8 /* InferPeerApple */ = {
+		9640FC17C6E97B89EE1B4204 /* InferPeerLlama */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = InferPeerApple;
+			productName = InferPeerLlama;
+		};
+		A227609E255D9898E590EF61 /* InferPeerSecurity */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InferPeerSecurity;
+		};
+		A46CD5008EE64AD314D7E9BA /* InferPeerGRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InferPeerGRPC;
 		};
 		A539755CE351C010D76463E6 /* InferPeerApple */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = InferPeerApple;
 		};
-		B51FA3849D252357100E8162 /* InferPeerTelemetry */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = InferPeerTelemetry;
-		};
-		C02A8B93AD5ECFBF8EA5C506 /* InferPeerStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = InferPeerStorage;
-		};
-		C103E8EFE3A24A5A1CEF7D18 /* InferPeerWhisperKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = InferPeerWhisperKit;
-		};
-		DDCBC0FFE7EA3F1B1DFC61B7 /* InferPeerCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = InferPeerCore;
-		};
-		EAAF50BC6CB08A5CE7090602 /* InferPeerMLX */ = {
+		A5EE568D49E677C489247C87 /* InferPeerMLX */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = InferPeerMLX;
 		};
-		F415D8E5D5894E8E201A350B /* InferPeerWhisperKit */ = {
+		BBF10385C6F4548C26D1BA9D /* InferPeerMLX */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = InferPeerWhisperKit;
+			productName = InferPeerMLX;
 		};
-		F7291376505807D2716D63A7 /* InferPeerLlama */ = {
+		C9B4342514D5CF8BB3AB8963 /* InferPeerGRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InferPeerGRPC;
+		};
+		C9D0B02DFC4E88C6D8592002 /* InferPeerLlama */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = InferPeerLlama;
+		};
+		E30CF78496A198E3CEBE47F0 /* InferPeerModelStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InferPeerModelStore;
+		};
+		ED3F979A37AB7F1A37F6A3EC /* InferPeerInference */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InferPeerInference;
+		};
+		FC9D42C20690FB75A8E8224B /* InferPeerDiscovery */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InferPeerDiscovery;
 		};
 		FD9055B50DE83FD21BCB7DEA /* InferPeerModelStore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = InferPeerModelStore;
+		};
+		FEE95BA740EFD272854F4CBF /* InferPeer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InferPeer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

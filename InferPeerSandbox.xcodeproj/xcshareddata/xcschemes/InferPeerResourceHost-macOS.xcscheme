@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "89B9092F7F333A405FD86FB9"
-               BuildableName = "InferPeerSandbox-iOS.app"
-               BlueprintName = "InferPeerSandbox-iOS"
+               BlueprintIdentifier = "55D057A70CEB49F716B8E00C"
+               BuildableName = "InferPeerResourceHost-macOS.app"
+               BlueprintName = "InferPeerResourceHost-macOS"
                ReferencedContainer = "container:InferPeerSandbox.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,27 +32,14 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "89B9092F7F333A405FD86FB9"
-            BuildableName = "InferPeerSandbox-iOS.app"
-            BlueprintName = "InferPeerSandbox-iOS"
+            BlueprintIdentifier = "55D057A70CEB49F716B8E00C"
+            BuildableName = "InferPeerResourceHost-macOS.app"
+            BlueprintName = "InferPeerResourceHost-macOS"
             ReferencedContainer = "container:InferPeerSandbox.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "92D1644223AB3A3496F0B734"
-               BuildableName = "InferPeerSandboxUITests.xctest"
-               BlueprintName = "InferPeerSandboxUITests"
-               ReferencedContainer = "container:InferPeerSandbox.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <CommandLineArguments>
-      </CommandLineArguments>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -68,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "89B9092F7F333A405FD86FB9"
-            BuildableName = "InferPeerSandbox-iOS.app"
-            BlueprintName = "InferPeerSandbox-iOS"
+            BlueprintIdentifier = "55D057A70CEB49F716B8E00C"
+            BuildableName = "InferPeerResourceHost-macOS.app"
+            BlueprintName = "InferPeerResourceHost-macOS"
             ReferencedContainer = "container:InferPeerSandbox.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -87,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "89B9092F7F333A405FD86FB9"
-            BuildableName = "InferPeerSandbox-iOS.app"
-            BlueprintName = "InferPeerSandbox-iOS"
+            BlueprintIdentifier = "55D057A70CEB49F716B8E00C"
+            BuildableName = "InferPeerResourceHost-macOS.app"
+            BlueprintName = "InferPeerResourceHost-macOS"
             ReferencedContainer = "container:InferPeerSandbox.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

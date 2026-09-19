@@ -14,119 +14,171 @@ settings:
     SWIFT_TREAT_WARNINGS_AS_ERRORS: true
     DEVELOPMENT_TEAM: R3645Z5958
     CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: 1.0.0
+    CURRENT_PROJECT_VERSION: 1
 
 packages:
   InferPeer:
     path: ../inferpeer-swift
 
-targets:
-  InferPeerSandbox-iOS:
-    type: application
-    platform: iOS
-    sources:
-      - Sources
-      - Resources/SharedAssets.xcassets
-      - Resources/iOSAssets.xcassets
-    info:
-      path: Support/iOS-Info.plist
-      properties:
-        CFBundleDisplayName: InferPeer Sandbox
-        NSBonjourServices:
-          - _inferpeer._tcp
-        NSLocalNetworkUsageDescription: InferPeer discovers explicitly approved devices on your local Wi-Fi network.
-        UIApplicationSceneManifest:
-          UIApplicationSupportsMultipleScenes: false
-        UILaunchScreen: {}
-        UISupportedInterfaceOrientations:
-          - UIInterfaceOrientationPortrait
-          - UIInterfaceOrientationLandscapeLeft
-          - UIInterfaceOrientationLandscapeRight
-        "UISupportedInterfaceOrientations~ipad":
-          - UIInterfaceOrientationPortrait
-          - UIInterfaceOrientationPortraitUpsideDown
-          - UIInterfaceOrientationLandscapeLeft
-          - UIInterfaceOrientationLandscapeRight
-    settings:
-      base:
-        PRODUCT_BUNDLE_IDENTIFIER: in.kodlabs.inferpeer.sandbox
-        PRODUCT_NAME: InferPeerSandbox
-        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon-iOS
+targetTemplates:
+  InferPeerClientProducts:
     dependencies:
       - package: InferPeer
         product: InferPeer
       - package: InferPeer
+        product: InferPeerApple
+      - package: InferPeer
         product: InferPeerCore
+      - package: InferPeer
+        product: InferPeerDiscovery
+      - package: InferPeer
+        product: InferPeerGRPC
       - package: InferPeer
         product: InferPeerInference
       - package: InferPeer
-        product: InferPeerProtocol
+        product: InferPeerModelStore
       - package: InferPeer
         product: InferPeerSecurity
+
+  InferPeerRuntimeProducts:
+    dependencies:
       - package: InferPeer
-        product: InferPeerStorage
-      - package: InferPeer
-        product: InferPeerTelemetry
-      - package: InferPeer
-        product: InferPeerModelStore
+        product: InferPeer
       - package: InferPeer
         product: InferPeerApple
       - package: InferPeer
-        product: InferPeerMLX
+        product: InferPeerCore
+      - package: InferPeer
+        product: InferPeerDiscovery
+      - package: InferPeer
+        product: InferPeerGRPC
+      - package: InferPeer
+        product: InferPeerInference
       - package: InferPeer
         product: InferPeerLlama
       - package: InferPeer
-        product: InferPeerWhisperKit
+        product: InferPeerMLX
+      - package: InferPeer
+        product: InferPeerModelStore
+      - package: InferPeer
+        product: InferPeerSecurity
 
-  InferPeerSandbox-macOS:
+targets:
+  InferPeerSandbox-iOS:
+    templates: [InferPeerClientProducts]
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources/Shared
+        excludes:
+          - AppModelEnvironment.swift
+      - Sources/Client
+      - path: Resources/PrivacyInfo.xcprivacy
+        buildPhase: resources
+      - Resources/SharedAssets.xcassets
+      - Resources/iOSAssets.xcassets
+    info:
+      path: Support/Sandbox-iOS-Info.plist
+      properties:
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleDisplayName: InferPeer Sandbox
+        NSBonjourServices: [_inferpeer._tcp]
+        NSLocalNetworkUsageDescription: InferPeer discovers and connects to approved model resources on your local network.
+        NSPhotoLibraryUsageDescription: InferPeer Sandbox uses selected images only for the inference request you send.
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UILaunchScreen: {}
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: in.kodlabs.inferpeer.sandbox
+        PRODUCT_NAME: InferPeerSandbox
+        TARGETED_DEVICE_FAMILY: "2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon-iOS
+
+  InferPeerResourceHost-iOS:
+    templates: [InferPeerRuntimeProducts]
+    type: application
+    platform: iOS
+    sources:
+      - Sources/Shared
+      - Sources/ResourceHost
+      - path: Resources/PrivacyInfo.xcprivacy
+        buildPhase: resources
+      - Resources/SharedAssets.xcassets
+      - Resources/iOSAssets.xcassets
+    info:
+      path: Support/ResourceHost-iOS-Info.plist
+      properties:
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleDisplayName: InferPeer Resource
+        NSBonjourServices: [_inferpeer._tcp]
+        NSLocalNetworkUsageDescription: InferPeer exposes approved on-device models to paired apps while this app is open.
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UIRequiresFullScreen: true
+        UILaunchScreen: {}
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: in.kodlabs.inferpeer.resourcehost
+        PRODUCT_NAME: InferPeerResource
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon-iOS
+
+  InferPeerResourceHost-macOS:
+    templates: [InferPeerRuntimeProducts]
     type: application
     platform: macOS
     sources:
-      - Sources
+      - Sources/Shared
+      - Sources/ResourceHost
+      - path: Resources/PrivacyInfo.xcprivacy
+        buildPhase: resources
       - Resources/SharedAssets.xcassets
       - Resources/macOSAssets.xcassets
     info:
       path: Support/macOS-Info.plist
       properties:
-        CFBundleDisplayName: InferPeer Sandbox
-        NSBonjourServices:
-          - _inferpeer._tcp
-        NSLocalNetworkUsageDescription: InferPeer discovers explicitly approved devices on your local Wi-Fi network.
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleDisplayName: InferPeer Resource
+        LSApplicationCategoryType: public.app-category.developer-tools
+        NSBonjourServices: [_inferpeer._tcp]
+        NSLocalNetworkUsageDescription: InferPeer exposes approved on-device models to paired apps while this app is open.
     entitlements:
       path: Support/macOS.entitlements
       properties:
-        com.apple.application-identifier: $(AppIdentifierPrefix)$(PRODUCT_BUNDLE_IDENTIFIER)
+        com.apple.security.app-sandbox: true
+        com.apple.security.network.client: true
+        com.apple.security.network.server: true
         keychain-access-groups:
-          - $(AppIdentifierPrefix)$(PRODUCT_BUNDLE_IDENTIFIER)
+          - $(AppIdentifierPrefix)$(CFBundleIdentifier)
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: in.kodlabs.inferpeer.sandbox.mac
-        PRODUCT_NAME: InferPeerSandbox
+        PRODUCT_BUNDLE_IDENTIFIER: in.kodlabs.inferpeer.resourcehost.mac
+        PRODUCT_NAME: InferPeerResource
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon-macOS
+
+  InferPeerSandboxUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - Tests/iOSUITests
     dependencies:
-      - package: InferPeer
-        product: InferPeer
-      - package: InferPeer
-        product: InferPeerCore
-      - package: InferPeer
-        product: InferPeerInference
-      - package: InferPeer
-        product: InferPeerProtocol
-      - package: InferPeer
-        product: InferPeerSecurity
-      - package: InferPeer
-        product: InferPeerStorage
-      - package: InferPeer
-        product: InferPeerTelemetry
-      - package: InferPeer
-        product: InferPeerModelStore
-      - package: InferPeer
-        product: InferPeerApple
-      - package: InferPeer
-        product: InferPeerMLX
-      - package: InferPeer
-        product: InferPeerLlama
-      - package: InferPeer
-        product: InferPeerWhisperKit
+      - target: InferPeerSandbox-iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: in.kodlabs.inferpeer.sandbox.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        TARGETED_DEVICE_FAMILY: "2"
+        TEST_TARGET_NAME: InferPeerSandbox-iOS
 
 schemes:
   InferPeerSandbox-iOS:
@@ -135,9 +187,19 @@ schemes:
         InferPeerSandbox-iOS: all
     run:
       config: Debug
-  InferPeerSandbox-macOS:
+    test:
+      config: Debug
+      targets:
+        - InferPeerSandboxUITests
+  InferPeerResourceHost-iOS:
     build:
       targets:
-        InferPeerSandbox-macOS: all
+        InferPeerResourceHost-iOS: all
+    run:
+      config: Debug
+  InferPeerResourceHost-macOS:
+    build:
+      targets:
+        InferPeerResourceHost-macOS: all
     run:
       config: Debug
