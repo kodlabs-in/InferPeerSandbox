@@ -27,9 +27,6 @@ targets:
       - Sources
       - Resources/SharedAssets.xcassets
       - Resources/iOSAssets.xcassets
-      - path: ../Models/Qwen3-0.6B-4bit
-        type: folder
-        buildPhase: resources
     info:
       path: Support/iOS-Info.plist
       properties:
@@ -70,7 +67,15 @@ targets:
       - package: InferPeer
         product: InferPeerTelemetry
       - package: InferPeer
+        product: InferPeerModelStore
+      - package: InferPeer
+        product: InferPeerApple
+      - package: InferPeer
         product: InferPeerMLX
+      - package: InferPeer
+        product: InferPeerLlama
+      - package: InferPeer
+        product: InferPeerWhisperKit
 
   InferPeerSandbox-macOS:
     type: application
@@ -79,9 +84,6 @@ targets:
       - Sources
       - Resources/SharedAssets.xcassets
       - Resources/macOSAssets.xcassets
-      - path: ../Models/Qwen3-0.6B-4bit
-        type: folder
-        buildPhase: resources
     info:
       path: Support/macOS-Info.plist
       properties:
@@ -116,7 +118,15 @@ targets:
       - package: InferPeer
         product: InferPeerTelemetry
       - package: InferPeer
+        product: InferPeerModelStore
+      - package: InferPeer
+        product: InferPeerApple
+      - package: InferPeer
         product: InferPeerMLX
+      - package: InferPeer
+        product: InferPeerLlama
+      - package: InferPeer
+        product: InferPeerWhisperKit
 
 schemes:
   InferPeerSandbox-iOS:

@@ -1,8 +1,13 @@
 import CryptoKit
 import Foundation
+import InferPeer
+import InferPeerCore
 import InferPeerInference
 import InferPeerMLX
 import InferPeerProtocol
+#if os(iOS)
+    import UIKit
+#endif
 
 enum SandboxPinnedModel {
     static let directoryName = "Qwen3-0.6B-4bit"
@@ -47,7 +52,7 @@ enum SandboxModelError: Error, LocalizedError, Sendable {
         case .weightsDigestMismatch(let expected, let actual):
             "The model weights digest is \(actual); expected \(expected)."
         case .generationDidNotComplete:
-            "The MLX event stream ended without a completion event."
+            "The InferPeer event stream ended without a completion event."
         }
     }
 }
@@ -104,101 +109,85 @@ actor SandboxMLXRunner {
 
         let verified = try await SandboxModelArtifactFactory.make(at: directoryURL)
         let reference = verified.artifact.descriptor.reference
-        let backend = MLXInferenceBackend()
-        let loadStart = ContinuousClock.now
-        try await backend.loadModel(verified.artifact)
-        let loadDuration = loadStart.duration(to: .now)
-        defer { Task { try? await backend.unloadModel(reference) } }
-
-        let execution = InferenceExecution(
-            requestID: requiredID(
-                RequestID.self, value: "request-\(UUID().uuidString.lowercased())"),
-            attemptID: requiredID(
-                AttemptID.self, value: "attempt-\(UUID().uuidString.lowercased())"),
-            model: reference,
-            request: try makeRequest(reference: reference)
+        let facade = try InferPeer(
+            configuration: InferPeerConfiguration(
+                localResource: LocalResourceConfiguration(
+                    displayName: "InferPeer Sandbox",
+                    platform: await platformDescriptor()
+                ),
+                localRuntime: MLXInferenceBackend(),
+                localModels: [verified.artifact],
+                defaultTextModel: reference
+            )
         )
-        return try await generate(
-            execution,
-            backend: backend,
-            loadDuration: loadDuration,
+        return try await runAndStop(
+            facade,
+            query: makeQuery(reference: reference),
             weightsSHA256: verified.weightsSHA256
         )
     }
 
-    private func generate(
-        _ execution: InferenceExecution,
-        backend: MLXInferenceBackend,
-        loadDuration: Duration,
+    private func runAndStop(
+        _ facade: InferPeer,
+        query: InferenceQuery,
         weightsSHA256: String
     ) async throws -> SandboxModelResult {
-        let generationStart = ContinuousClock.now
-        let events = try await backend.generate(execution)
-        var firstTextDuration: Duration?
-        var completedResult: GenerationResult?
+        do {
+            let runStart = ContinuousClock.now
+            let handle = try await facade.run(query, resourceId: .local)
+            let observation = try await observe(handle.events, runStart: runStart)
+            let result = try await handle.result()
+            await facade.stop()
+            return makeResult(
+                result,
+                observation: observation,
+                weightsSHA256: weightsSHA256
+            )
+        } catch {
+            await facade.stop()
+            throw error
+        }
+    }
+
+    private func observe(
+        _ events: RunEventStream,
+        runStart: ContinuousClock.Instant
+    ) async throws -> SandboxRunObservation {
+        var tracker = SandboxRunTimingTracker()
         for try await event in events {
-            switch event {
-            case .textDelta:
-                if firstTextDuration == nil {
-                    firstTextDuration = generationStart.duration(to: .now)
-                }
-            case .completed(let result):
-                completedResult = result
-            }
+            tracker.record(event)
         }
-        guard let completedResult else {
-            throw SandboxModelError.generationDidNotComplete
-        }
-        return makeResult(
-            completedResult,
-            loadDuration: loadDuration,
-            firstTextDuration: firstTextDuration,
-            generationDuration: generationStart.duration(to: .now),
-            weightsSHA256: weightsSHA256
-        )
+        return try tracker.observation(runStart: runStart)
     }
 
     private func makeResult(
-        _ completion: GenerationResult,
-        loadDuration: Duration,
-        firstTextDuration: Duration?,
-        generationDuration: Duration,
+        _ result: RunResult,
+        observation: SandboxRunObservation,
         weightsSHA256: String
     ) -> SandboxModelResult {
-        let generationSeconds = seconds(generationDuration)
-        let outputTokens = completion.usage.outputTokens
+        let generationSeconds = seconds(observation.generationDuration)
+        let outputTokens = result.usage.outputTokens
         let throughput = generationSeconds > 0 ? Double(outputTokens) / generationSeconds : 0
         return SandboxModelResult(
-            text: completion.fullText,
+            text: result.text,
             modelID: SandboxPinnedModel.modelID,
             revision: SandboxPinnedModel.revision,
             weightsSHA256: weightsSHA256,
-            loadSeconds: seconds(loadDuration),
-            firstTextSeconds: firstTextDuration.map(seconds),
+            loadSeconds: seconds(observation.loadDuration),
+            firstTextSeconds: observation.firstTextDuration.map(seconds),
             generationSeconds: generationSeconds,
-            promptTokens: completion.usage.promptTokens,
+            promptTokens: result.usage.promptTokens,
             outputTokens: outputTokens,
             tokensPerSecond: throughput
         )
     }
 
-    private func makeRequest(reference: ModelReference) throws -> TextGenerationRequest {
-        let context = try ConversationContext(
-            conversationID: requiredID(
-                ConversationID.self,
-                value: "conversation-\(UUID().uuidString.lowercased())"
-            ),
-            revision: 1,
-            messages: [
-                try TextMessage(role: .user, text: "Reply with exactly: InferPeer offline OK")
-            ]
+    private func makeQuery(reference: ModelReference) -> InferenceQuery {
+        .text(
+            model: .exact(reference),
+            messages: [.user("Reply with exactly: InferPeer offline OK")],
+            generation: .init(maxOutputTokens: 32, temperature: 0)
         )
-        let options = try GenerationOptions(
-            modelRequirement: .exact(reference),
-            maximumOutputTokens: 32,
-            sampling: try SamplingOptions(temperature: 0)
-        )
-        return TextGenerationRequest(context: context, options: options)
     }
 
     private func seconds(_ duration: Duration) -> Double {
@@ -206,14 +195,54 @@ actor SandboxMLXRunner {
         return Double(parts.seconds) + Double(parts.attoseconds) / 1e18
     }
 
-    private func requiredID<Domain>(
-        _ type: ProtocolIdentifier<Domain>.Type,
-        value: String
-    ) -> ProtocolIdentifier<Domain> {
-        guard let identifier = ProtocolIdentifier<Domain>(rawValue: value) else {
-            preconditionFailure("Sandbox identifier must be valid")
+    private func platformDescriptor() async -> PlatformDescriptor {
+        #if os(iOS)
+            let operatingSystem: PlatformDescriptor.OperatingSystem = await MainActor.run {
+                UIDevice.current.userInterfaceIdiom == .pad ? .iPadOS : .iOS
+            }
+        #else
+            let operatingSystem = PlatformDescriptor.OperatingSystem.macOS
+        #endif
+        return PlatformDescriptor(
+            operatingSystem: operatingSystem,
+            operatingSystemVersion: ProcessInfo.processInfo.operatingSystemVersionString
+        )
+    }
+}
+
+private struct SandboxRunObservation {
+    let loadDuration: Duration
+    let firstTextDuration: Duration?
+    let generationDuration: Duration
+}
+
+private struct SandboxRunTimingTracker {
+    private var executionStart: ContinuousClock.Instant?
+    private var firstTextDuration: Duration?
+    private var terminalObserved = false
+
+    mutating func record(_ event: RunEvent) {
+        switch event {
+        case .started:
+            executionStart = .now
+        case .textDelta where firstTextDuration == nil:
+            firstTextDuration = executionStart?.duration(to: .now)
+        case .completed, .failed, .cancelled:
+            terminalObserved = true
+        default:
+            break
         }
-        return identifier
+    }
+
+    func observation(runStart: ContinuousClock.Instant) throws -> SandboxRunObservation {
+        guard terminalObserved, let executionStart else {
+            throw SandboxModelError.generationDidNotComplete
+        }
+        return SandboxRunObservation(
+            loadDuration: runStart.duration(to: executionStart),
+            firstTextDuration: firstTextDuration,
+            generationDuration: executionStart.duration(to: .now)
+        )
     }
 }
 

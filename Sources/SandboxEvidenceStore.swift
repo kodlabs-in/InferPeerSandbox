@@ -78,6 +78,13 @@ enum SandboxEvidenceStore {
         try write(lines, to: "latest-failure-validation.txt")
     }
 
+    static func writeAutomation(_ data: Data, mode: String) throws {
+        try data.write(
+            to: directory().appendingPathComponent("automation-\(mode).json"),
+            options: .atomic
+        )
+    }
+
     private static func write(_ lines: [String], to filename: String) throws {
         try lines.joined(separator: "\n").write(
             to: directory().appendingPathComponent(filename),

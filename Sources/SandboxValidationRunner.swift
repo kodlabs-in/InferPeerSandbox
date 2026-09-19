@@ -1,5 +1,6 @@
 import CryptoKit
 import Foundation
+import InferPeer
 import InferPeerCore
 import InferPeerInference
 import InferPeerProtocol
@@ -32,6 +33,7 @@ actor SandboxValidationRunner {
         checks.append(await storageCheck())
         checks.append(await statusCheck())
         checks.append(await inferenceCheck())
+        checks.append(await multimodalInferenceCheck())
         let failureChecks = await failureMatrix.run()
         checks.append(contentsOf: failureChecks)
         try? SandboxEvidenceStore.writeChecks(checks)
@@ -79,22 +81,111 @@ actor SandboxValidationRunner {
     private func inferenceCheck() async -> SandboxCheck {
         do {
             let artifact = try makeArtifact(directoryURL: SandboxEvidenceStore.directory())
-            let request = try makeRequest(reference: artifact.descriptor.reference)
             let backend = SandboxInferenceBackend()
-            await backend.loadModel(artifact)
-            let execution = InferenceExecution(
-                requestID: identifier(RequestID.self, prefix: "request"),
-                attemptID: identifier(AttemptID.self, prefix: "attempt"),
-                model: artifact.descriptor.reference,
-                request: request
+            let facade = try InferPeer(
+                configuration: InferPeerConfiguration(
+                    localResource: LocalResourceConfiguration(
+                        displayName: "InferPeer Sandbox validation",
+                        platform: validationPlatform()
+                    ),
+                    localRuntime: backend,
+                    localModels: [artifact],
+                    defaultTextModel: artifact.descriptor.reference
+                )
             )
-            let events = try await backend.generate(execution)
+            let handle = try await facade.run(
+                .text(
+                    model: .exact(artifact.descriptor.reference),
+                    messages: [.user("InferPeer physical-device smoke test")],
+                    generation: .init(maxOutputTokens: 16)
+                ),
+                resourceId: .local
+            )
+            _ = try await handle.result()
             var eventCount = 0
-            for try await _ in events { eventCount += 1 }
-            return passed("Bounded inference stream", "Consumed \(eventCount) ordered events")
+            for try await _ in handle.events { eventCount += 1 }
+            await facade.stop()
+            return passed(
+                "Direct local resource",
+                "Facade consumed \(eventCount) ordered events without networking"
+            )
         } catch {
-            return failed("Bounded inference stream", error)
+            return failed("Direct local resource", error)
         }
+    }
+
+    private func multimodalInferenceCheck() async -> SandboxCheck {
+        do {
+            let artifact = try makeArtifact(directoryURL: SandboxEvidenceStore.directory())
+            let facade = try makeMultimodalFacade(artifact: artifact)
+            for query in multimodalQueries() {
+                let handle = try await facade.run(query, resourceId: .local)
+                _ = try await handle.result()
+                for try await _ in handle.events {}
+            }
+            await facade.stop()
+            return passed(
+                "Direct multimodal contracts",
+                "Vision, transcription, and speech completed through the v2 runtime"
+            )
+        } catch {
+            return failed("Direct multimodal contracts", error)
+        }
+    }
+
+    private func makeMultimodalFacade(artifact: LocalModelArtifact) throws -> InferPeer {
+        let model = artifact.descriptor.reference
+        return try InferPeer(
+            configuration: InferPeerConfiguration(
+                localResource: LocalResourceConfiguration(
+                    displayName: "InferPeer Sandbox multimodal validation",
+                    platform: validationPlatform()
+                ),
+                directRuntime: SandboxDirectRuntime(),
+                localModels: [artifact],
+                localModelTasks: [model: Set(InferenceTask.allCases)],
+                defaultModels: Dictionary(
+                    uniqueKeysWithValues: InferenceTask.allCases.map { ($0, model) }
+                )
+            )
+        )
+    }
+
+    private func multimodalQueries() -> [InferenceQuery] {
+        [
+                .vision(
+                    model: .taskDefault,
+                    messages: [.user("Describe this image")],
+                    images: [.receipt(.init(rawValue: "sandbox-image"))]
+                ),
+                .transcribe(
+                    model: .taskDefault,
+                    audio: .receipt(.init(rawValue: "sandbox-audio")),
+                    language: "en"
+                ),
+                .synthesizeSpeech(
+                    model: .taskDefault,
+                    voiceID: "sandbox-voice",
+                    text: "InferPeer Sandbox"
+                ),
+        ]
+    }
+
+    private func validationPlatform() -> PlatformDescriptor {
+        #if os(iOS)
+            let operatingSystem = PlatformDescriptor.OperatingSystem.iOS
+        #else
+            let operatingSystem = PlatformDescriptor.OperatingSystem.macOS
+        #endif
+        return PlatformDescriptor(
+            operatingSystem: operatingSystem,
+            operatingSystemVersion: Self.operatingSystemVersion
+        )
+    }
+
+    static var operatingSystemVersion: String {
+        let version = ProcessInfo.processInfo.operatingSystemVersion
+        return "\(version.majorVersion).\(version.minorVersion).\(version.patchVersion)"
     }
 
     private func makeSubmission() throws -> RequestSubmission {
@@ -209,4 +300,86 @@ private actor SandboxInferenceBackend: InferenceBackend {
     }
 
     func cancel(attemptID: AttemptID) {}
+}
+
+private actor SandboxDirectRuntime: DirectInferenceRuntime {
+    func estimateResources(
+        for query: InferenceQuery,
+        using model: ModelDescriptor
+    ) throws -> InferenceResourceEstimate {
+        try InferenceResourceEstimate(peakMemoryBytes: 1)
+    }
+
+    func loadModel(_ model: LocalModelArtifact) {}
+
+    func unloadModel(_ reference: ModelKey) {}
+
+    func execute(_ execution: DirectRuntimeExecution) throws -> DirectRuntimeEventStream {
+        let pair = DirectRuntimeEventStream.makeStream()
+        switch execution.query {
+        case .text:
+            pair.continuation.yield(.textDelta("InferPeer Sandbox direct runtime"))
+        case .vision:
+            pair.continuation.yield(.preprocessing(.decodingMedia))
+            pair.continuation.yield(.textDelta("InferPeer Sandbox direct runtime"))
+        case .audioTranscription:
+            pair.continuation.yield(.transcriptSegment(transcriptSegment()))
+        case .speechSynthesis:
+            pair.continuation.yield(
+                .audioChunk(
+                    AudioChunk(
+                        format: .signedInt16,
+                        sampleRate: 24_000,
+                        channelCount: 1,
+                        frameOffset: 0,
+                        samples: Data([0, 1, 2, 3])
+                    )
+                )
+            )
+        }
+        pair.continuation.yield(.completed(result(for: execution)))
+        pair.continuation.finish()
+        return pair.stream
+    }
+
+    func cancel(attemptID: AttemptID) {}
+
+    private func result(for execution: DirectRuntimeExecution) -> RunResult {
+        let content: RunResultContent
+        switch execution.query {
+        case .text, .vision:
+            content = .text("InferPeer Sandbox direct runtime")
+        case .audioTranscription:
+            content = .transcription(
+                segments: [transcriptSegment()],
+                language: "en",
+                mode: .transcription
+            )
+        case .speechSynthesis:
+            content = .speech(
+                asset: .init(rawValue: "sandbox-speech"),
+                format: .signedInt16,
+                sampleRate: 24_000,
+                channelCount: 1,
+                frameCount: 2
+            )
+        }
+        return RunResult(
+            content: content,
+            model: execution.model,
+            finishReason: .stop,
+            usage: TokenUsage(promptTokens: 1, outputTokens: 1)
+        )
+    }
+
+    private func transcriptSegment() -> TranscriptSegment {
+        TranscriptSegment(
+            id: "sandbox-segment",
+            revision: 1,
+            start: .zero,
+            end: .seconds(1),
+            text: "InferPeer Sandbox transcription",
+            isFinal: true
+        )
+    }
 }
