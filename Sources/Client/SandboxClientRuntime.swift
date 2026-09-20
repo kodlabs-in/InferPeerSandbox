@@ -51,7 +51,11 @@ actor SandboxClientRuntime {
   }
 
   func pair(code: String) async throws -> ResourceID {
-    guard let data = Data(base64Encoded: code.trimmingCharacters(in: .whitespacesAndNewlines))
+    let encoded = code.trimmingCharacters(in: .whitespacesAndNewlines)
+    let decodedLimit = PairingConfiguration.standard.maximumEncodedInvitationBytes
+    let base64Limit = ((decodedLimit + 2) / 3) * 4
+    guard encoded.utf8.count <= base64Limit,
+      let data = Data(base64Encoded: encoded)
     else {
       throw InferPeerError(code: .invalidRequest, isRetryable: false)
     }

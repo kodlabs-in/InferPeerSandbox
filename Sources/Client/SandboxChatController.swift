@@ -25,6 +25,7 @@ final class SandboxChatController: ObservableObject {
   private var runTask: Task<Void, Never>?
   private var discoveryHandle: DiscoveryHandle?
   private var activeHandle: RunHandle?
+  private var activeRunID: UUID?
   private var imageURL: URL?
   private var modelNames: [ModelKey: String] = [:]
   private var started = false
@@ -117,16 +118,24 @@ final class SandboxChatController: ObservableObject {
     lastUsage = nil
     isRunning = true
     status = "Preparing \(choice.modelName) on \(choice.resourceName)…"
+    let runID = UUID()
+    activeRunID = runID
     runTask = Task { [weak self] in
-      await self?.performRun(choice: choice, messages: history, imageURL: runImageURL)
+      await self?.performRun(
+        choice: choice,
+        messages: history,
+        imageURL: runImageURL,
+        runID: runID
+      )
     }
   }
 
   func cancel() {
+    guard let runID = activeRunID else { return }
     let handle = activeHandle
     runTask?.cancel()
     Task { await handle?.cancel() }
-    finishRun(status: "Cancelled.")
+    finishRun(runID: runID, status: "Cancelled.")
   }
 
   func enteredBackground() {
@@ -224,23 +233,43 @@ extension SandboxChatController {
   fileprivate func performRun(
     choice: SandboxExecutionChoice,
     messages: [InferenceMessage],
-    imageURL: URL?
+    imageURL: URL?,
+    runID: UUID
   ) async {
     defer { if let imageURL { try? FileManager.default.removeItem(at: imageURL) } }
     do {
-      let facade = try await runtime.facade()
-      let query = makeQuery(choice: choice, messages: messages, imageURL: imageURL)
-      let handle = try await facade.run(query, resourceId: choice.resourceID)
-      activeHandle = handle
-      for try await event in handle.events { apply(event) }
-      let result = try await handle.result()
-      lastUsage = result.usage
-      finishRun(status: "Completed on \(choice.resourceName).")
+      try await executeRun(
+        choice: choice,
+        messages: messages,
+        imageURL: imageURL,
+        runID: runID
+      )
     } catch is CancellationError {
-      finishRun(status: "Cancelled.")
+      finishRun(runID: runID, status: "Cancelled.")
     } catch {
-      finishRun(status: "Run failed: \(error.localizedDescription)")
+      finishRun(runID: runID, status: "Run failed: \(error.localizedDescription)")
     }
+  }
+
+  private func executeRun(
+    choice: SandboxExecutionChoice,
+    messages: [InferenceMessage],
+    imageURL: URL?,
+    runID: UUID
+  ) async throws {
+    let facade = try await runtime.facade()
+    let query = makeQuery(choice: choice, messages: messages, imageURL: imageURL)
+    let handle = try await facade.run(query, resourceId: choice.resourceID)
+    guard activeRunID == runID else {
+      await handle.cancel()
+      return
+    }
+    activeHandle = handle
+    for try await event in handle.events { apply(event, runID: runID) }
+    let result = try await handle.result()
+    guard activeRunID == runID else { return }
+    lastUsage = result.usage
+    finishRun(runID: runID, status: "Completed on \(choice.resourceName).")
   }
 
   fileprivate func makeQuery(
@@ -260,8 +289,17 @@ extension SandboxChatController {
     )
   }
 
-  fileprivate func apply(_ event: RunEvent) {
-    guard let index = messages.indices.last else { return }
+  fileprivate func apply(_ event: RunEvent, runID: UUID) {
+    guard let index = activeAssistantIndex(for: runID) else { return }
+    apply(event, toMessageAt: index)
+  }
+
+  private func activeAssistantIndex(for runID: UUID) -> Int? {
+    guard activeRunID == runID else { return nil }
+    return messages.indices.last
+  }
+
+  private func apply(_ event: RunEvent, toMessageAt index: Int) {
     switch event {
     case .textDelta(let text):
       messages[index].text += text
@@ -278,7 +316,9 @@ extension SandboxChatController {
     }
   }
 
-  fileprivate func finishRun(status: String) {
+  fileprivate func finishRun(runID: UUID, status: String) {
+    guard activeRunID == runID else { return }
+    activeRunID = nil
     activeHandle = nil
     runTask = nil
     isRunning = false
